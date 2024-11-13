@@ -1,7 +1,7 @@
 local Enabled = true
 
 -- 1 = 100%, 0.25 = 25%
-local COUNTER_MODE = false -- NOT RECOMMEND
+local COUNTER_MODE = true -- NOT RECOMMEND
 local Legit = {
    Enabled = true,
    LightChance = 0.3,
