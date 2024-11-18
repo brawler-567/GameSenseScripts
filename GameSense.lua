@@ -1,19 +1,16 @@
-local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
-
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/src.lua"))()
 local GUI = Mercury:Create{
     Name = "Gamesense",
     Size = UDim2.fromOffset(600, 500),
     Theme = Mercury.Themes.Dark,
-    Link = "https://github.com/deeeity/mercury-lib"
+    Link = "https://GameSense.pub/"
 }
-
 GUI:Notification{
-	Title = "Gamesense",
-	Text = "Get Good Get Gamesense",
+	Title = "GameSense",
+	Text = "Get Good Get GameSense",
 	Duration = 4,
 	Callback = function() end
 }
-
 GUI:Credit{
 	Name = "By Z1dex",
 	Description = "Get Good Get GameSense",
@@ -21,123 +18,104 @@ GUI:Credit{
 }
 
 local Tab = GUI:Tab{
-    Name = "TpHive",
+    Name = "PlayerStats",
     Icon = "rbxassetid://8569322835"
 }
 
-Tab:Button{
-    Name = "TpToHive1",
-    Description = nil,
-    Callback = function()
-    GUI:Notification{
-	Title = "Teleportation",
-	Text = "You Successful Teleported!",
-	Duration = 1.5,
-	Callback = function() end
-    }
-    local player = game.Players.LocalPlayer
-    local targetCoordinates = Vector3.new(-3.67, 10, 331)
-    player.Character.HumanoidRootPart.CFrame = CFrame.new(targetCoordinates)
+Tab:Slider{
+	Name = "WalkSpeed",
+	Default = 14,
+	Min = 0,
+	Max = 100,
+	Callback = function(s)
+    while game:GetService("RunService").RenderStepped:wait() do
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
     end
+end
 }
 
-Tab:Button{
-    Name = "TpToHive2",
-    Description = nil,
-    Callback = function()
-    GUI:Notification{
-	Title = "Teleportation",
-	Text = "You Successful Teleported!",
-	Duration = 1.5,
-	Callback = function() end
-    }
-    local player = game.Players.LocalPlayer
-    local targetCoordinates = Vector3.new(-40.3, 10, 331)
-    player.Character.HumanoidRootPart.CFrame = CFrame.new(targetCoordinates)
+
+
+Tab:Slider{
+	Name = "JumpPower",
+	Default = 14,
+	Min = 0,
+	Max = 100,
+	Callback = function(j)
+    while game:GetService("RunService").RenderStepped:wait() do
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
     end
+end
 }
 
-Tab:Button{
-    Name = "TpToHive3",
-    Description = nil,
-    Callback = function()
-    GUI:Notification{
-	Title = "Teleportation",
-	Text = "You Successful Teleported!",
-	Duration = 1.5,
-	Callback = function() end
-    }
-    local player = game.Players.LocalPlayer
-    local targetCoordinates = Vector3.new(-77, 10, 331)
-    player.Character.HumanoidRootPart.CFrame = CFrame.new(targetCoordinates)
-    end
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/src.lua"))()
+local GUI = Mercury:Create{
+    Name = "Gamesense",
+    Size = UDim2.fromOffset(600, 500),
+    Theme = Mercury.Themes.Dark,
+    Link = "https://GameSense.pub/"
 }
-
-Tab:Button{
-    Name = "TpToHive4",
-    Description = nil,
-    Callback = function()
-    GUI:Notification{
-	Title = "Teleportation",
-	Text = "You Successful Teleported!",
-	Duration = 1.5,
+GUI:Notification{
+	Title = "GameSense",
+	Text = "Get Good Get GameSense",
+	Duration = 4,
 	Callback = function() end
-    }
-    local player = game.Players.LocalPlayer
-    local targetCoordinates = Vector3.new(-113.2, 10, 331)
-    player.Character.HumanoidRootPart.CFrame = CFrame.new(targetCoordinates)
-    end
 }
-
-Tab:Button{
-    Name = "TpToHive5",
-    Description = nil,
-    Callback = function()
-    GUI:Notification{
-	Title = "Teleportation",
-	Text = "You Successful Teleported!",
-	Duration = 1.5,
-	Callback = function() end
-    }
-    local player = game.Players.LocalPlayer
-    local targetCoordinates = Vector3.new(-150, 10, 331)
-    player.Character.HumanoidRootPart.CFrame = CFrame.new(targetCoordinates)
-    end
-}
-
-Tab:Button{
-    Name = "TpToHive6",
-    Description = nil,
-    Callback = function()
-    GUI:Notification{
-	Title = "Teleportation",
-	Text = "You Successful Teleported!",
-	Duration = 1.5,
-	Callback = function() end
-    }
-    local player = game.Players.LocalPlayer
-    local targetCoordinates = Vector3.new(-186.67, 10, 331)
-    player.Character.HumanoidRootPart.CFrame = CFrame.new(targetCoordinates)
-    end
+GUI:Credit{
+	Name = "By Z1dex",
+	Description = "Get Good Get GameSense",
+	Discord = "Z1dex"
 }
 
 local Tab = GUI:Tab{
-    Name = "Farm",
+    Name = "PlayerStats",
     Icon = "rbxassetid://8569322835"
 }
 
-Tab:Button{
-    Name = "TpToPapperPollen",
-    Description = nil,
-    Callback = function()
-        GUI:Notification{
-	    Title = "Teleportation",
-	    Text = "You Successful Teleported!",
-	    Duration = 1.5,
-	    Callback = function() end
-        }
-        local player = game.Players.LocalPlayer
-        local targetCoordinates = Vector3.new(-500, 130, 530)
-        player.Character.HumanoidRootPart.CFrame = CFrame.new(targetCoordinates)
-        end
+Tab:Slider{
+	Name = "WalkSpeed",
+	Default = 14,
+	Min = 0,
+	Max = 100,
+	Callback = function(s)
+    while game:GetService("RunService").RenderStepped:wait() do
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end
+end
+}
+
+Tab:Slider{
+	Name = "JumpPower",
+	Default = 14,
+	Min = 0,
+	Max = 100,
+	Callback = function(j)
+    while game:GetService("RunService").RenderStepped:wait() do
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+    end
+end
+}
+
+Tab:Slider{
+	Name = "Gravity",
+	Default = 14,
+	Min = 0,
+	Max = 200,
+	Callback = function(g)
+    while game:GetService("RunService").RenderStepped:wait() do
+    Workspace.Gravity = g
+    end
+end
+}
+
+Tab:Slider{
+	Name = "FOV",
+	Default = 14,
+	Min = 0,
+	Max = 100,
+	Callback = function(FOV)
+    while game:GetService("RunService").RenderStepped:wait() do
+    Workspace.Camera.FieldOfView = FOV
+    end
+end
 }
