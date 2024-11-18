@@ -131,7 +131,6 @@ Tab:Button{
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
 	end
-end
 }
         
 Tab:Button{
@@ -140,5 +139,4 @@ Tab:Button{
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/VerbalHubz/Verbal-Hub/refs/heads/main/Bee%20Swarm%20Sim.Lua",true))()
 	end
-end
 }
