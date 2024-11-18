@@ -119,3 +119,25 @@ Tab:Slider{
     end
 end
 }
+
+local Tab = GUI:Tab{
+Name = "GameHub",
+Icon = "rbxassetid://8569322835"
+}
+        
+Tab:Button{
+	Name = "Fisch",
+	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+	end
+}
+        
+Tab:Button{
+	Name = "Bss",
+    	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/VerbalHubz/Verbal-Hub/refs/heads/main/Bee%20Swarm%20Sim.Lua",true))()
+	end
+end
+}
