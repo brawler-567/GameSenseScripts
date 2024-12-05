@@ -1,3 +1,8 @@
+game.StarterGui:SetCore("SendNotification", {
+                Title = "levers moved",
+                Text = "door has been opened",
+                Duration = 2
+end
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant:IsA("ParticleEmitter") then
         descendant.Rate = descendant.Rate * 10
