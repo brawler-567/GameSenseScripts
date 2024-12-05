@@ -1,4 +1,10 @@
 workspace.DescendantAdded:Connect(function(descendant)
+    if descendant:IsA("ParticleEmitter") then
+        descendant.Rate = descendant.Rate * 10
+    end
+end)
+
+workspace.DescendantAdded:Connect(function(descendant)
     if descendant.Name == "base" and descendant:IsA("BasePart") then
         local player = game.Players.LocalPlayer
         if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
@@ -16,39 +22,32 @@ end)
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant.Name == "eye" or descendant.Name == "elkman" or descendant.Name == "Rush" or descendant.Name == "Worm" or descendant.Name == "eyePrime" then
         descendant:Destroy()
-        game.ReplicatedStorage.SendRush.Carnation.tinnitus.Playing = false
-        game.StarterGui:SetCore("SendNotification", {
-                Title = "entity detected",
-                Text = "entity has been removed",
-                Duration = 2.3
-            })
-        end
     end
 end)
 
 local players = game:GetService("Players")
 local localPlayer = players.LocalPlayer
 
-local function deleyeGui()
+while true do
     local eyeGui = localPlayer:FindFirstChild("PlayerGui"):FindFirstChild("eyegui")
-    eyeGui:Destroy()
-end
-if eyeGui then
-  deleyeGui()
-end
-
-local function delsmileGui()
-    local smileGui = localPlayer:FindFirstChild("PlayerGui"):FindFirstChild("smileGui")
-    smileGui:Destroy()
-end
-if smilegui then
-  delsmileGui()
+    if eyeGui then
+        eyeGui:Destroy()
+    end
+    task.wait(0.1)
 end
 
-local function delfunnygoatman()
+while true do
+    local smileGui = localPlayer:FindFirstChild("PlayerGui"):FindFirstChild("smilegui")
+    if smileGui then
+        smileGui:Destroy()
+    end
+    task.wait(0.1)
+end
+
+while true do
     local funnygoatman = localPlayer:FindFirstChild("PlayerGui"):FindFirstChild("GOATPORT")
-    funnygoatman:Destroy()
-end
-if funnygoatman then
-  delfunnygoatman()
+    if funnygoatman then
+        funnygoatman:Destroy()
+    end
+    task.wait(0.1)
 end
