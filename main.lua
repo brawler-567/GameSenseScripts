@@ -35,12 +35,6 @@ local function deleyeGui()
 end
 if eyeGui then
   deleyeGui()
-  game.StarterGui:SetCore("SendNotification", {
-                Title = "eyeGui detected",
-                Text = "eyeGui has been removed",
-                Duration = 2.3
-            })
-   end
 end
 
 local function delsmileGui()
@@ -49,12 +43,6 @@ local function delsmileGui()
 end
 if smilegui then
   delsmileGui()
-  game.StarterGui:SetCore("SendNotification", {
-                Title = "smilefaceGui detected",
-                Text = "smilefaceGui has been removed",
-                Duration = 2.3
-            })
-   end
 end
 
 local function delfunnygoatman()
@@ -63,10 +51,4 @@ local function delfunnygoatman()
 end
 if funnygoatman then
   delfunnygoatman()
-  game.StarterGui:SetCore("SendNotification", {
-                Title = "funnygoatmanGui detected",
-                Text = "funnygoatmanGui has been removed",
-                Duration = 2.3
-            })
-   end
 end
