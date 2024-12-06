@@ -33,26 +33,23 @@ end)
 local players = game:GetService("Players")
 local localPlayer = players.LocalPlayer
 
-while true do
-    local eyeGui = localPlayer:FindFirstChild("PlayerGui"):FindFirstChild("eyegui")
-    if eyeGui then
-        eyeGui:Destroy()
+local function delEyeGui()
+    local model = localPlayer:WaitForChild("PlayerGui"):WaitForChild("eyegui")
+    if model then
+        model:Destroy()
     end
-    task.wait(0.1)
 end
 
-while true do
-    local smileGui = localPlayer:FindFirstChild("PlayerGui"):FindFirstChild("smilegui")
-    if smileGui then
-        smileGui:Destroy()
+local function delSmileGui()
+    local model = localPlayer:WaitForChild("PlayerGui"):WaitForChild("smilegui")
+    if model then
+        model:Destroy()
     end
-    task.wait(0.1)
 end
 
-while true do
-    local funnygoatman = localPlayer:FindFirstChild("PlayerGui"):FindFirstChild("GOATPORT")
-    if funnygoatman then
-        funnygoatman:Destroy()
+local function delFGO()
+    local model = localPlayer:WaitForChild("PlayerGui"):WaitForChild("GOATPORT")
+    if model then
+        model:Destroy()
     end
-    task.wait(0.1)
 end
