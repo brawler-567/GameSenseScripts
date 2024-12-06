@@ -1,6 +1,6 @@
 game.StarterGui:SetCore("SendNotification", {
-                Title = "levers moved",
-                Text = "door has been opened",
+                Title = "Welcome",
+                Text = "Execute is success",
                 Duration = 2
 end
 workspace.DescendantAdded:Connect(function(descendant)
