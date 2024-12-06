@@ -1,9 +1,8 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Welcome",
-    Text = "Execute is success",
-    Duration = 2
+Title = "Welcome",
+Text = "Script has been executed",
+Duration = 3
 })
-end
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant:IsA("ParticleEmitter") then
         descendant.Rate = descendant.Rate * 10
