@@ -1,7 +1,8 @@
 game.StarterGui:SetCore("SendNotification", {
-                Title = "Welcome",
-                Text = "Execute is success",
-                Duration = 2
+    Title = "Welcome",
+    Text = "Execute is success",
+    Duration = 2
+})
 end
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant:IsA("ParticleEmitter") then
@@ -31,26 +32,8 @@ workspace.DescendantAdded:Connect(function(descendant)
     end
 end)
 
-local players = game:GetService("Players")
-local localPlayer = players.LocalPlayer
-
-local function delEyeGui()
-    local model = localPlayer:WaitForChild("PlayerGui"):WaitForChild("eyegui")
-    if model then
-        model:Destroy()
+ReplicatedStorage.DescendantAdded:Connect(function(descendant)
+    if descendant.Name == "SendRush" or descendant.Name == "eyegui" or descendant.Name == "Rush" or descendant.Name == "SendWorm" or descendant.Name == "smilegui" or descendant.Name == "SendGoatman" or descendant.Name == "SendSorrow" then
+        descendant:Destroy()
     end
-end
-
-local function delSmileGui()
-    local model = localPlayer:WaitForChild("PlayerGui"):WaitForChild("smilegui")
-    if model then
-        model:Destroy()
-    end
-end
-
-local function delFGO()
-    local model = localPlayer:WaitForChild("PlayerGui"):WaitForChild("GOATPORT")
-    if model then
-        model:Destroy()
-    end
-end
+end)
