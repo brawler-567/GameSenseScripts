@@ -27,6 +27,7 @@ end)
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant.Name == "eye" or descendant.Name == "elkman" or descendant.Name == "Rush" or descendant.Name == "Worm" or descendant.Name == "eyePrime" then
         descendant:Destroy()
+        game.ReplicatedStorage.SendRush.Carnation.tinnitus.Playing = false
     end
 end)
 
