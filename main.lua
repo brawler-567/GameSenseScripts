@@ -62,13 +62,3 @@ Title = "Entity Detected",
 Text = "All entities has been removed from game",
 Duration = 3
 })
-
-while true do
-    local players = game:GetService("Players")
-    local localPlayer = players.LocalPlayer
-    local SmileGui = localPlayer:WaitForChild("PlayerGui"):WaitForChild("smilegui")
-    if SmileGui then
-        SmileGui:Destroy()
-    end
-    task.wait(0.1)
-end
