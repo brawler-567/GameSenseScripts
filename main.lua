@@ -37,3 +37,17 @@ ReplicatedStorage.DescendantAdded:Connect(function(descendant)
         descendant:Destroy()
     end
 end)
+
+while true do 
+  ReplicatedStorage.elkman:Destroy()
+  ReplicatedStorage.Worm:Destroy()
+end
+
+while true do 
+  ReplicatedStorage.QuickNotes.Eye:Destroy()
+  ReplicatedStorage.QuickNotes.EyePrime:Destroy()
+  ReplicatedStorage.QuickNotes.SlugFish:Destroy()
+  ReplicatedStorage.QuickNotes.Rush:Destroy()
+  ReplicatedStorage.QuickNotes.elkman:Destroy()
+  ReplicatedStorage.QuickNotes.Sorrow:Destroy()
+end
