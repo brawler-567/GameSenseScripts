@@ -28,15 +28,17 @@ end)
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant.Name == "eye" or descendant.Name == "elkman" or descendant.Name == "Rush" or descendant.Name == "Worm" or descendant.Name == "eyePrime" then
         descendant:Destroy()
-        game.ReplicatedStorage.SendRush.Carnation.tinnitus.Playing = false
     end
 end)
 
-ReplicatedStorage.DescendantAdded:Connect(function(descendant)
-    if descendant.Name == "SendRush" or descendant.Name == "eyegui" or descendant.Name == "Rush" or descendant.Name == "SendWorm" or descendant.Name == "smilegui" or descendant.Name == "SendGoatman" or descendant.Name == "SendSorrow" then
-        descendant:Destroy()
-    end
-end)
+while true do 
+  ReplicatedStorage.SendRush:Destroy()
+  ReplicatedStorage.SendWorm:Destroy()
+  ReplicatedStorage.eyegui:Destroy()
+  ReplicatedStorage.smilegui:Destroy()
+  ReplicatedStorage.SendGoatman:Destroy()
+  ReplicatedStorage.SendSorrow
+end
 
 while true do 
   ReplicatedStorage.elkman:Destroy()
