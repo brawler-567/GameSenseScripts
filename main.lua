@@ -31,25 +31,27 @@ workspace.DescendantAdded:Connect(function(descendant)
     end
 end)
 
-while true do 
-  ReplicatedStorage.SendRush:Destroy()
-  ReplicatedStorage.SendWorm:Destroy()
-  ReplicatedStorage.eyegui:Destroy()
-  ReplicatedStorage.smilegui:Destroy()
-  ReplicatedStorage.SendGoatman:Destroy()
-  ReplicatedStorage.SendSorrow
+local RS = game:GetService("ReplicatedStorage")
+
+while true do
+  RS.SendRush:Destroy()
+  RS.SendWorm:Destroy()
+  RS.eyegui:Destroy()
+  RS.smilegui:Destroy()
+  RS.SendGoatman:Destroy()
+  RS.SendSorrow:Destroy()
 end
 
-while true do 
-  ReplicatedStorage.elkman:Destroy()
-  ReplicatedStorage.Worm:Destroy()
+while true do
+  RS.elkman:Destroy()
+  RS.Worm:Destroy()
 end
 
-while true do 
-  ReplicatedStorage.QuickNotes.Eye:Destroy()
-  ReplicatedStorage.QuickNotes.EyePrime:Destroy()
-  ReplicatedStorage.QuickNotes.SlugFish:Destroy()
-  ReplicatedStorage.QuickNotes.Rush:Destroy()
-  ReplicatedStorage.QuickNotes.elkman:Destroy()
-  ReplicatedStorage.QuickNotes.Sorrow:Destroy()
+while true do
+  RS.QuickNotes.Eye:Destroy()
+  RS.QuickNotes.EyePrime:Destroy()
+  RS.QuickNotes.SlugFish:Destroy()
+  RS.QuickNotes.Rush:Destroy()
+  RS.QuickNotes.elkman:Destroy()
+  RS.QuickNotes.Sorrow:Destroy()
 end
