@@ -1,4 +1,3 @@
-Почему не работает
 for n = 1, math.huge do
     local v = workspace.Rooms.[n]:WaitForChild("Door"):WaitForChild("Door"):WaitForChild("Root")
     hg = Instance.new("Highlight")
