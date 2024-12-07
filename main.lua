@@ -58,7 +58,7 @@ RS.QuickNotes.SleepyHead:Destroy()
 while true do
     local players = game:GetService("Players")
     local localPlayer = players.LocalPlayer
-    local SmileGui = localPlayer:FindFirstChild("PlayerGui"):FindFirstChild("smilegui")
+    local SmileGui = localPlayer:WaitForChild("PlayerGui"):WaitForChild("smilegui")
     if SmileGui then
         SmileGui:Destroy() 
     end
