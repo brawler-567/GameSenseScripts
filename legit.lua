@@ -9,6 +9,11 @@ workspace.DescendantAdded:Connect(function(descendant)
     end
 end)
 
+local Players = game:GetService ("Players")
+local plr = Players.LocalPlayer
+if plr then
+    hg = Instance.new("Highlight")
+
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant.Name == "base" and descendant:IsA("BasePart") then
         local player = game.Players.LocalPlayer
