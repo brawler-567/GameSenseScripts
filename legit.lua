@@ -11,8 +11,17 @@ end)
 
 local Players = game:GetService ("Players")
 local plr = Players.LocalPlayer
-if plr then
-    hg = Instance.new("Highlight")
+
+hg = Instance.new("Highlight")
+hg.Parent = plr:FindFirstChild("PlayerGui")
+
+local function toggleFunction()
+    -- Здесь вы можете включить или выключить функционал, например показать или скрыть форму
+    local form = game.StarterGui.ScreenGui.Form
+    form.Visible = not form.Visible
+end
+
+toggleButton.Activated:Connect(toggleFunction)
 
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant.Name == "base" and descendant:IsA("BasePart") then
