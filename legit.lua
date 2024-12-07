@@ -73,3 +73,14 @@ workspace.DescendantAdded:Connect(function(descendant)
         })
     end
 end)
+
+workspace.DescendantAdded:Connect(function(descendant)
+    if descendant.Name == "Sorrow" then
+        game.StarterGui:SetCore("SendNotification", {
+        Title = "Sorrow eye",
+        Text = "Sorrow has been spawned",
+        Duration = 3
+        })
+    end
+end)
+
