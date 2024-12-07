@@ -12,15 +12,22 @@ end)
 local Players = game:GetService ("Players")
 local plr = Players.LocalPlayer
 
-hg = Instance.new("Highlight")
-hg.Parent = plr:FindFirstChild("PlayerGui")
+-- Создаем GuiButton
+local toggleButton = Instance.new("GuiButton")
+toggleButton.Parent = game.StarterGui.ScreenGui
+toggleButton.Text = "fb"
+toggleButton.Size = UDim2.new(0, 100, 0, 30)
+toggleButton.Position = UDim2.new(0, 100, 0, 100)
+toggleButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+toggleButton.AutoButtonColor = false
 
+-- Связываем событие "Activated" с функцией, которая включает или выключает функционал
 local function toggleFunction()
     -- Здесь вы можете включить или выключить функционал, например показать или скрыть форму
-    local form = game.StarterGui.ScreenGui.Form
-    form.Visible = not form.Visible
+    hg = Instance.new("Highlight")
+    hg.Parent = plr:FindFirstChild("PlayerGui")
+    hg.Visible = not hg.Visible
 end
-
 toggleButton.Activated:Connect(toggleFunction)
 
 workspace.DescendantAdded:Connect(function(descendant)
