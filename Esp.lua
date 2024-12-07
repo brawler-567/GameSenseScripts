@@ -1,5 +1,5 @@
-for n = 1, math.huge do
-    local v = workspace.Rooms.(n).Door.Door.Root
+for _, door in pairs(workspace.Rooms[1].Doors:GetChildren()) do
+    local v = door.Door.Root
     hg = Instance.new("Highlight")
     hg.FillColor = Color3.fromRGB(241, 196, 15)
     hg.FillTransparency = 0.5
@@ -38,5 +38,4 @@ for n = 1, math.huge do
     txtlbl2.TextStrokeTransparency = 0.5
     txtlbl2.TextColor3 = Color3.fromRGB(241, 196, 15)
     txtlbl2.Parent = bb
-    n = n + 1
 end
