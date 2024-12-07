@@ -1,6 +1,6 @@
 while true do
     for n = 1, math.huge do
-        local v = workspace.Rooms.(n).Door.Door
+        local v = workspace.Rooms.(n).Door.Door.Root
         hg = Instance.new("Highlight")
         hg.FillColor = Color3.fromRGB(241, 196, 15)
         hg.FillTransparency = 0.5
@@ -39,10 +39,5 @@ while true do
         txtlbl2.TextStrokeTransparency = 0.5
         txtlbl2.TextColor3 = Color3.fromRGB(241, 196, 15)
         txtlbl2.Parent = bb
-                    
-        if v then
-            v.BillBoard.Dist.Text = round((game.Players.LocalPlayer.Character.PrimaryPart.Position - v.Position).magnitude, 1) .. " Studs"
-        end
-        task.wait(1)
     end
 end
