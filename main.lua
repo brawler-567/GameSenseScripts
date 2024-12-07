@@ -13,7 +13,7 @@ workspace.DescendantAdded:Connect(function(descendant)
     if descendant.Name == "base" and descendant:IsA("BasePart") then
         local player = game.Players.LocalPlayer
         if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-            descendant.Position = player.Character.HumanoidRootPart.Position
+            descendant.CFrame = player.Character.HumanoidRootPart.CFrame
 
             game.StarterGui:SetCore("SendNotification", {
                 Title = "levers moved",
