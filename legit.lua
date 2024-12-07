@@ -25,10 +25,30 @@ workspace.DescendantAdded:Connect(function(descendant)
 end)
 
 workspace.DescendantAdded:Connect(function(descendant)
-    if descendant.Name == "eye" or descendant.Name == "elkman" or descendant.Name == "Rush" or descendant.Name == "Worm" or descendant.Name == "eyePrime" then
+    if descendant.Name == "eye" then
         game.StarterGui:SetCore("SendNotification", {
         Title = "eye",
         Text = "eye has been spawned",
+        Duration = 3
+        })
+    end
+end)
+
+workspace.DescendantAdded:Connect(function(descendant)
+    if descendant.Name == "elkman" then
+        game.StarterGui:SetCore("SendNotification", {
+        Title = "elkman",
+        Text = "elkman has been spawned",
+        Duration = 3
+        })
+    end
+end)
+
+workspace.DescendantAdded:Connect(function(descendant)
+    if descendant.Name == "Rush" or descendant.Name == "Worm" or descendant.Name == "eyePrime" then
+        game.StarterGui:SetCore("SendNotification", {
+        Title = "Rush",
+        Text = "Rush has been spawned",
         Duration = 3
         })
     end
