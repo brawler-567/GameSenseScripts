@@ -84,3 +84,9 @@ workspace.DescendantAdded:Connect(function(descendant)
     end
 end)
 
+local ContextActionService = game:GetService("ContextActionService")
+
+while true do
+    ContextActionService:TriggerAction("EKey")
+    wait(0.1)
+end
