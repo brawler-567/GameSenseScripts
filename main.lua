@@ -4,21 +4,6 @@ Text = "Script has been executed",
 Duration = 3
 })
 
-
-
-local gui = 
-local button = gui:WaitForChild("Button")
-local guiWindow = gui:WaitForChild("GuiWindow")
-
-local function toggleGui()
-    guiWindow.Visible = not guiWindow.Visible
-end
-
-button.Activated:Connect(toggleGui)
-
-
-
-
 workspace.DescendantAdded:Connect(function(descendant)
     if descendant:IsA("ParticleEmitter") then
         descendant.Rate = descendant.Rate * 10
