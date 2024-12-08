@@ -84,8 +84,17 @@ workspace.DescendantAdded:Connect(function(descendant)
     end
 end)
 
-local ContextActionService = game:GetService("ContextActionService")
+while true do
+    local players = game:GetService("Players")
+    local plr = players.LocalPlayer
+    local SmileGui = plr:WaitForChild("PlayerGui"):WaitForChild("smilegui")
+    if SmileGui then
+        SmileGui:Destroy() 
+    end
+    task.wait(0.1)
+end
 
+local ContextActionService = game:GetService("ContextActionService")
 while true do
     ContextActionService:TriggerAction("EKey")
     wait(0.1)
