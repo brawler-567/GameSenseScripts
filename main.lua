@@ -69,5 +69,5 @@ end
 
 while true do
     ContextActionService:TriggerAction("EKey")
-    wait(1)
+    wait(0.1)
 end
