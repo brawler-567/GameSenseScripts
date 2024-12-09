@@ -32,7 +32,6 @@ workspace.DescendantAdded:Connect(function(descendant)
 end)
 
 local RS = game:GetService("ReplicatedStorage")
-local ContextActionService = game:GetService("ContextActionService")
 
 RS.eyegui:Destroy()
 RS.smilegui:Destroy()
@@ -65,9 +64,4 @@ while true do
         SmileGui:Destroy() 
     end
     task.wait(0.1)
-end
-
-while true do
-    ContextActionService:TriggerAction("EKey")
-    wait(0.1)
 end
