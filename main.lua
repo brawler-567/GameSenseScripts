@@ -21,6 +21,8 @@ workspace.DescendantAdded:Connect(function(descendant)
                 Text = "door has been opened",
                 Duration = 3
             })
+            task.wait(1)
+            descendant.CFrame = player.Character.HumanoidRootPart.CFrame
         end
     end
 end)
