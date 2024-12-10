@@ -88,3 +88,24 @@ local Button = Main:CreateButton({
    end)
    end,
 })
+
+local LeversMain = Main:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   workspace.DescendantAdded:Connect(function(descendant)
+       if descendant.Name == "base" and descendant:IsA("BasePart") then
+           local player = game.Players.LocalPlayer
+           if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+               descendant.CFrame = player.Character.HumanoidRootPart.CFrame
+
+               Rayfield:Notify({
+                  Title = "Lever Activated!",
+                  Content = "Lever has been activated!",
+                 Duration = 2.5,
+                 Image = "rewind",
+               })
+           end
+       end
+   end)
+   end,
+})
