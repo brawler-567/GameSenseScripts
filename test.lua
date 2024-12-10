@@ -115,7 +115,7 @@ local BoostFPS = AddonsTab:CreateSlider({
    Range = {0, 10},
    Increment = 1,
    Suffix = "affects special effects",
-   CurrentValue = 2,
+   CurrentValue = 6,
    Flag = "BoostFPS",
    Callback = function(Value)
    workspace.DescendantAdded:Connect(function(descendant)
