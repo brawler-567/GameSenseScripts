@@ -39,7 +39,7 @@ local AddonsTab = Window:CreateTab("Addons", "rewind")
 --MainTab
 local LeversMainSec = MainTab:CreateSection("Levers")
 local LeversMain = MainTab:CreateButton({
-   Name = "Button Example",
+   Name = "AutoLevers",
    Callback = function()
    workspace.DescendantAdded:Connect(function(descendant)
        if descendant.Name == "base" and descendant:IsA("BasePart") then
