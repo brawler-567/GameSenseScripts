@@ -1,9 +1,9 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-   Name = "Rayfield Example Window",
+   Name = "Gamesense",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Rayfield Interface Suite",
-   LoadingSubtitle = "by Sirius",
+   LoadingTitle = "Get Good Get GameSense",
+   LoadingSubtitle = "by Z1dex",
    Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    DisableRayfieldPrompts = false,
@@ -33,3 +33,13 @@ local Window = Rayfield:CreateWindow({
    }
 })
 local Tab = Window:CreateTab("Tab Example", "rewind")
+
+local Section = Tab:CreateSection("Section Example")
+local Button = Tab:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   end,
+})
+local Label = Tab:CreateLabel("Label Example", "rewind")
+local Paragraph = Tab:CreateParagraph({Title = "Paragraph Example", Content = "Paragraph Example"})
