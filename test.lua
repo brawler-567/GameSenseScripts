@@ -109,7 +109,7 @@ local RemoveEntities = MainTab:CreateButton({
 
 
 --Addons
-local Addons = Addons:CreateSection("Addons")
+local AddonsSec = Addons:CreateSection("Addons")
 local BoostFPS = Addons:CreateButton({
    Name = "BoostFPS",
    Callback = function()
