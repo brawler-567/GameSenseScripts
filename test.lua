@@ -34,9 +34,10 @@ local Window = Rayfield:CreateWindow({
 })
 local Main = Window:CreateTab("Main", "rewind")
 local Legit = Window:CreateTab("legit", "rewind")
+local Addons = Window:CreateTab("Addons", "rewind")
 
 local Addons = Main:CreateSection("Addons")
-local BoostFPS = Main:CreateButton({
+local BoostFPS = Addons:CreateButton({
    Name = "BoostFPS",
    Callback = function()
    workspace.DescendantAdded:Connect(function(descendant)
@@ -74,6 +75,15 @@ local Button = Main:CreateButton({
          RS.QuickNotes.SlugFish:Destroy()
          RS.QuickNotes.FakeDoor:Destroy()
          RS.QuickNotes.SleepyHead:Destroy()
+         while true do
+            local players = game:GetService("Players")
+            local plr = players.LocalPlayer
+            local SmileGui = plr:FindFirstChild("PlayerGui"):FindFirstChild("smilegui")
+            if SmileGui then
+               SmileGui:Destroy() 
+            end
+            task.wait(0.1)
+         end
       end
    end)
    end,
