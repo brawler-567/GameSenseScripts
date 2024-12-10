@@ -32,8 +32,8 @@ local Window = Rayfield:CreateWindow({
       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
-local Tab = Window:CreateTab("Tab Example", "rewind")
-local Tab2 = Window:CreateTab("Tab Example", "rewind")
+local Main = Window:CreateTab("Main", "rewind")
+local Tab2 = Window:CreateTab("legit", "rewind")
 
 local Section = Tab:CreateSection("Section Example")
 local Label = Tab:CreateLabel("entities", "rewind")
