@@ -120,3 +120,18 @@ local BoostFPS = Addons:CreateButton({
    end)
    end,
 })
+local Slider = Addons:CreateSlider({
+   Name = "BoostFPS",
+   Range = {1, 10},
+   Increment = 1,
+   Suffix = "removes special effects",
+   CurrentValue = 2,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(R)
+   workspace.DescendantAdded:Connect(function(descendant)
+      if descendant:IsA("ParticleEmitter") then
+         descendant.Rate = descendant.Rate * R
+      end
+   end)
+   end,
+})
