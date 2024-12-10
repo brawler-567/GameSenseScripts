@@ -36,7 +36,6 @@ local Main = Window:CreateTab("Main", "rewind")
 local Legit = Window:CreateTab("legit", "rewind")
 
 local Section = Main:CreateSection("Addons")
-local BoostFPSMain = Section:CreateLabel("BoostFPS", "rewind")
 local BoostFPS = Section:CreateButton({
    Name = "BoostFPS",
    Callback = function()
