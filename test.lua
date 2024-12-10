@@ -33,13 +33,13 @@ local Window = Rayfield:CreateWindow({
    }
 })
 local Tab = Window:CreateTab("Tab Example", "rewind")
+local Tab2 = Window:CreateTab("Tab Example", "rewind")
 
 local Section = Tab:CreateSection("Section Example")
+local Label = Tab:CreateLabel("entities", "rewind")
 local Button = Tab:CreateButton({
    Name = "Button Example",
    Callback = function()
    -- The function that takes place when the button is pressed
    end,
 })
-local Label = Tab:CreateLabel("Label Example", "rewind")
-local Paragraph = Tab:CreateParagraph({Title = "Paragraph Example", Content = "Paragraph Example"})
