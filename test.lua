@@ -84,6 +84,5 @@ local Button = Main:CreateButton({
          SmileGui:Destroy() 
       end
       task.wait(0.1)
-   end
    end,
 })
