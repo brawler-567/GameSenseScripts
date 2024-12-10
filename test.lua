@@ -120,3 +120,19 @@ local BoostFPS = Addons:CreateButton({
    end)
    end,
 })
+
+local Slider = Tab:CreateSlider({
+   Name = "Slider Example",
+   Range = {0, 10},
+   Increment = 1,
+   Suffix = "Bananas",
+   CurrentValue = 2,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   workspace.DescendantAdded:Connect(function(descendant)
+      if descendant:IsA("ParticleEmitter") then
+         descendant.Rate = descendant.Rate * Value
+      end
+   end)
+   end,
+})
