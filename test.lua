@@ -33,9 +33,9 @@ local Window = Rayfield:CreateWindow({
    }
 })
 --Tabs
-local MainTab = Window:CreateTab("Main", "rewind")
-local LegitTab = Window:CreateTab("legit", "rewind")
-local AddonsTab = Window:CreateTab("Addons", "rewind")
+local Main = Window:CreateTab("Main", "rewind")
+local Legit = Window:CreateTab("legit", "rewind")
+local Addons = Window:CreateTab("Addons", "rewind")
 --MainTab
 local LeversMain = MainTab:CreateSection("Levers")
 local LeversMain = MainTab:CreateButton({
@@ -109,13 +109,13 @@ local RemoveEntities = MainTab:CreateButton({
 
 
 --Addons
-local Addons = AddonsTab:CreateSection("Addons")
-local BoostFPS = AddonsTab:CreateButton({
+local Addons = Addons:CreateSection("Addons")
+local BoostFPS = Addons:CreateButton({
    Name = "BoostFPS",
    Callback = function()
    workspace.DescendantAdded:Connect(function(descendant)
       if descendant:IsA("ParticleEmitter") then
-         descendant.Rate = descendant.Rate * 10
+         descendant.Rate = descendant.Rate * 6
       end
    end)
    end,
