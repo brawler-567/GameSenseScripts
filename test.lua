@@ -110,11 +110,12 @@ local Toggle = LegitTab:CreateToggle({
    if eye = true then
       workspace.DescendantAdded:Connect(function(descendant)
          if descendant.Name == "eye" then
-            game.StarterGui:SetCore("SendNotification", {
-            Title = "eye",
-            Text = "eye has been spawned",
-            Duration = 3
-         })
+            Rayfield:Notify({
+               Title = "eye",
+               Content = "eye has been spawned!",
+               Duration = 3,
+               Image = "rewind",
+            })
          end
       end)
    end
