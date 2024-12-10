@@ -110,24 +110,14 @@ local RemoveEntitiesMain = MainTab:CreateButton({
 
 --Addons
 local AddonsSec = AddonsTab:CreateSection("Addons")
-local BoostFPS = AddonsTab:CreateButton({
+local LeversMainSec = MainTab:CreateSection("Addons")
+local BoostFPS = AddonsTab:CreateSlider({
    Name = "BoostFPS",
-   Callback = function()
-   workspace.DescendantAdded:Connect(function(descendant)
-      if descendant:IsA("ParticleEmitter") then
-         descendant.Rate = descendant.Rate * 6
-      end
-   end)
-   end,
-})
-
-local Slider = AddonsTab:CreateSlider({
-   Name = "Slider Example",
    Range = {0, 10},
    Increment = 1,
-   Suffix = "Bananas",
+   Suffix = "affects special effects",
    CurrentValue = 2,
-   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "BoostFPS",
    Callback = function(Value)
    workspace.DescendantAdded:Connect(function(descendant)
       if descendant:IsA("ParticleEmitter") then
