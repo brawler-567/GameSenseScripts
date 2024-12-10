@@ -35,11 +35,15 @@ local Window = Rayfield:CreateWindow({
 local Main = Window:CreateTab("Main", "rewind")
 local Legit = Window:CreateTab("legit", "rewind")
 
-local Section = Tab:CreateSection("Section Example")
-local Label = Tab:CreateLabel("entities", "rewind")
-local Button = Tab:CreateButton({
-   Name = "Button Example",
+local Section = Main:CreateSection("Section Example")
+local BoostFPSMain = Main:CreateLabel("BoostFPS", "rewind")
+local BoostFPS = Main:CreateButton({
+   Name = "BoostFPS",
    Callback = function()
-   -- The function that takes place when the button is pressed
+   workspace.DescendantAdded:Connect(function(descendant)
+      if descendant:IsA("ParticleEmitter") then
+         descendant.Rate = descendant.Rate * 10
+      end
+   end)
    end,
 })
