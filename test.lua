@@ -109,8 +109,8 @@ local RemoveEntitiesMain = MainTab:CreateButton({
 
 
 --Addons
-local AddonsSec = Addons:CreateSection("Addons")
-local BoostFPS = Addons:CreateButton({
+local AddonsSec = AddonsTab:CreateSection("Addons")
+local BoostFPS = AddonsTab:CreateButton({
    Name = "BoostFPS",
    Callback = function()
    workspace.DescendantAdded:Connect(function(descendant)
@@ -121,7 +121,7 @@ local BoostFPS = Addons:CreateButton({
    end,
 })
 
-local Slider = Tab:CreateSlider({
+local Slider = AddonsTab:CreateSlider({
    Name = "Slider Example",
    Range = {0, 10},
    Increment = 1,
