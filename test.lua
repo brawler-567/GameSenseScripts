@@ -107,11 +107,11 @@ local Toggle = Tab:CreateToggle({
    CurrentValue = false,
    Flag = "LeverEsp", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-   workspace.DescendantAdded:Connect(function(descendant)
-       if descendant.Name == "base" and descendant:IsA("BasePart") then
-           local player = game.Players.LocalPlayer
-           if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-              if Value = true then
+   if Value = true then
+      workspace.DescendantAdded:Connect(function(descendant)
+          if descendant.Name == "base" and descendant:IsA("BasePart") then
+              local player = game.Players.LocalPlayer
+              if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
                  v = descendant
                  hg = Instance.new("Highlight", v)
                  hg.FillColor = Color3.fromRGB(241, 196, 15)
@@ -149,8 +149,8 @@ local Toggle = Tab:CreateToggle({
                  txtlbl2.TextColor3 = Color3.fromRGB(241, 196, 15)
               end
            end
-       end
-   end)
+       end)
+   end
    end,
 })
 
