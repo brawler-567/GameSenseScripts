@@ -49,7 +49,7 @@ local BoostFPS = Main:CreateButton({
 
 local RemoveEntities = Main:CreateSection("Remove Entities")
 
-local Toggle = Tab:CreateToggle({
+local Toggle = Main:CreateToggle({
    Name = "Remove Canva",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
