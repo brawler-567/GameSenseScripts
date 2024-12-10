@@ -122,3 +122,17 @@ local BoostFPS = AddonsTab:CreateSlider({
    end)
    end,
 })
+
+local BoostFPS = AddonsTab:CreateSlider({
+   Name = "CustomWalkSpees",
+   Range = {0, 10},
+   Increment = 1,
+   Suffix = "Change your WalkSpees",
+   CurrentValue = 6,
+   Flag = "WalkSpeed",
+   Callback = function(s)
+   while game:GetService("RunService").RenderStepped:wait() do
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+   end
+   end,
+})
