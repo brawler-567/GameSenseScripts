@@ -35,7 +35,7 @@ local Window = Rayfield:CreateWindow({
 local Main = Window:CreateTab("Main", "rewind")
 local Legit = Window:CreateTab("legit", "rewind")
 
-local Section = Main:CreateSection("Section Example")
+local Section = Main:CreateSection("Addons")
 local BoostFPSMain = Main:CreateLabel("BoostFPS", "rewind")
 local BoostFPS = Sectin:CreateButton({
    Name = "BoostFPS",
