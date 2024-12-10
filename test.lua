@@ -1,6 +1,6 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-   Name = "Gamesense",
+   Name = "GameSense",
    Icon = 0,
    LoadingTitle = "Get Good Get GameSense",
    LoadingSubtitle = "by Z1dex",
