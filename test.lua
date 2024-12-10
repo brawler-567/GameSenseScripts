@@ -36,7 +36,7 @@ local MainTab = Window:CreateTab("Main", "rewind")
 local LegitTab = Window:CreateTab("legit", "rewind")
 local AddonsTab = Window:CreateTab("Addons", "rewind")
 --Main
-local LeversMainSec = Maintain:CreateSection("Levels")
+local LeversMainSec = MainTab:CreateSection("Levels")
 
 local LeversMain = MainTab:CreateButton({
    Name = "Button Example",
