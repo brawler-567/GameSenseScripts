@@ -46,3 +46,5 @@ local BoostFPS = Main:CreateButton({
    end)
    end,
 })
+
+local RemoveEntities = Tab:CreateSection("Remove Entities")
