@@ -23,7 +23,7 @@ local Window = Rayfield:CreateWindow({
 
    KeySystem = true,
    KeySettings = {
-      Title = "Untilted",
+      Title = "GameSense",
       Subtitle = "Key System",
       Note = "https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/key.txt",
       FileName = "Key",
