@@ -102,7 +102,7 @@ local RemoveEntitiesMain = MainTab:CreateButton({
 
 
 local LeaverEspSec = LegitTab:CreateSection("LeverEsp")
-local Toggle = Tab:CreateToggle({
+local LeverEspLegit = Tab:CreateToggle({
    Name = "LeverEsp",
    CurrentValue = false,
    Flag = "LeverEsp", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
