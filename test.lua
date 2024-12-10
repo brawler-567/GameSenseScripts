@@ -32,12 +32,12 @@ local Window = Rayfield:CreateWindow({
       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
+--Tabs
 local MainTab = Window:CreateTab("Main", "rewind")
 local LegitTab = Window:CreateTab("legit", "rewind")
 local AddonsTab = Window:CreateTab("Addons", "rewind")
---Main
-local LeversMainSec = MainTab:CreateSection("Levels")
-
+--MainTab
+local LeversMain = MainTab:CreateSection("Levers")
 local LeversMain = MainTab:CreateButton({
    Name = "Button Example",
    Callback = function()
@@ -46,13 +46,16 @@ local LeversMain = MainTab:CreateButton({
            local player = game.Players.LocalPlayer
            if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
                descendant.CFrame = player.Character.HumanoidRootPart.CFrame
-
                Rayfield:Notify({
                   Title = "Levers Activated",
                   Content = "Door has been opened!",
                  Duration = 2.5,
                  Image = "rewind",
                })
+               task.wait(1)
+               descendant.CFrame = player.Character.HumanoidRootPart.CFrame
+               task.wait(1)
+               descendant.CFrame = player.Character.HumanoidRootPart.CFrame
            end
        end
    end)
@@ -60,8 +63,7 @@ local LeversMain = MainTab:CreateButton({
 })
 
 local RemoveEntities = MainTab:CreateSection("Remove Entities")
-
-local Button = MainTab:CreateButton({
+local RemoveEntities = MainTab:CreateButton({
    Name = "Remove all entities",
    Callback = function()
    local RS = game:GetService("ReplicatedStorage")
