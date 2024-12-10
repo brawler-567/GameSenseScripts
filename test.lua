@@ -99,8 +99,8 @@ local LeversMain = Main:CreateButton({
                descendant.CFrame = player.Character.HumanoidRootPart.CFrame
 
                Rayfield:Notify({
-                  Title = "Lever Activated!",
-                  Content = "Lever has been activated!",
+                  Title = "Levers Activated",
+                  Content = "Door has been opened!",
                  Duration = 2.5,
                  Image = "rewind",
                })
