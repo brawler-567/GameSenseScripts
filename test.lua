@@ -102,7 +102,6 @@ local RemoveEntitiesMain = MainTab:CreateButton({
 
 
 local LeaverEspSec = LegitTab:CreateSection("LeverEsp")
-local Toggle = LegitTab:CreateToggle({
 
 
 
