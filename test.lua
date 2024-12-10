@@ -76,13 +76,5 @@ local Button = Main:CreateButton({
    RS.QuickNotes.SlugFish:Destroy()
    RS.QuickNotes.FakeDoor:Destroy()
    RS.QuickNotes.SleepyHead:Destroy()
-   while true do
-      local players = game:GetService("Players")
-      local plr = players.LocalPlayer
-      local SmileGui = plr:FindFirstChild("PlayerGui"):FindFirstChild("smilegui")
-      if SmileGui then
-         SmileGui:Destroy() 
-      end
-      task.wait(0.1)
    end,
 })
