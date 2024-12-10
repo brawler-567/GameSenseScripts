@@ -110,7 +110,6 @@ local RemoveEntitiesMain = MainTab:CreateButton({
 
 --Addons
 local AddonsSec = AddonsTab:CreateSection("Addons")
-local LeversMainSec = MainTab:CreateSection("Addons")
 local BoostFPS = AddonsTab:CreateSlider({
    Name = "BoostFPS",
    Range = {0, 10},
