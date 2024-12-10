@@ -37,7 +37,7 @@ local Legit = Window:CreateTab("legit", "rewind")
 
 local Section = Main:CreateSection("Addons")
 local BoostFPSMain = Main:CreateLabel("BoostFPS", "rewind")
-local BoostFPS = Sectin:CreateButton({
+local BoostFPS = Section:CreateButton({
    Name = "BoostFPS",
    Callback = function()
    workspace.DescendantAdded:Connect(function(descendant)
