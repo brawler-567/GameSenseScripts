@@ -32,25 +32,14 @@ local Window = Rayfield:CreateWindow({
       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
-local Main = Window:CreateTab("Main", "rewind")
-local Legit = Window:CreateTab("legit", "rewind")
-local Addons = Window:CreateTab("Addons", "rewind")
-
-local Addons = Main:CreateSection("Addons")
-local BoostFPS = Addons:CreateButton({
-   Name = "BoostFPS",
-   Callback = function()
-   workspace.DescendantAdded:Connect(function(descendant)
-      if descendant:IsA("ParticleEmitter") then
-         descendant.Rate = descendant.Rate * 10
-      end
-   end)
-   end,
-})
+local MainTab = Window:CreateTab("Main", "rewind")
+local LegitTab = Window:CreateTab("legit", "rewind")
+local AddonsTab = Window:CreateTab("Addons", "rewind")
+--Main
 
 local RemoveEntities = Main:CreateSection("Remove Entities")
 
-local Button = Main:CreateButton({
+local Button = MainTab:CreateButton({
    Name = "Remove all entities",
    Callback = function()
    local RS = game:GetService("ReplicatedStorage")
@@ -106,6 +95,23 @@ local LeversMain = Main:CreateButton({
                })
            end
        end
+   end)
+   end,
+})
+
+--Legit
+
+
+
+--Addons
+local Addons = AddonsTab:CreateSection("Addons")
+local BoostFPS = AddonsTab:CreateButton({
+   Name = "BoostFPS",
+   Callback = function()
+   workspace.DescendantAdded:Connect(function(descendant)
+      if descendant:IsA("ParticleEmitter") then
+         descendant.Rate = descendant.Rate * 10
+      end
    end)
    end,
 })
