@@ -36,8 +36,30 @@ local MainTab = Window:CreateTab("Main", "rewind")
 local LegitTab = Window:CreateTab("legit", "rewind")
 local AddonsTab = Window:CreateTab("Addons", "rewind")
 --Main
+local LeversMainSec = Maintain:CreateSection("Levels")
 
-local RemoveEntities = Main:CreateSection("Remove Entities")
+local LeversMain = MainTab:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   workspace.DescendantAdded:Connect(function(descendant)
+       if descendant.Name == "base" and descendant:IsA("BasePart") then
+           local player = game.Players.LocalPlayer
+           if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+               descendant.CFrame = player.Character.HumanoidRootPart.CFrame
+
+               Rayfield:Notify({
+                  Title = "Levers Activated",
+                  Content = "Door has been opened!",
+                 Duration = 2.5,
+                 Image = "rewind",
+               })
+           end
+       end
+   end)
+   end,
+})
+
+local RemoveEntities = MainTab:CreateSection("Remove Entities")
 
 local Button = MainTab:CreateButton({
    Name = "Remove all entities",
@@ -78,26 +100,7 @@ local Button = MainTab:CreateButton({
    end,
 })
 
-local LeversMain = Main:CreateButton({
-   Name = "Button Example",
-   Callback = function()
-   workspace.DescendantAdded:Connect(function(descendant)
-       if descendant.Name == "base" and descendant:IsA("BasePart") then
-           local player = game.Players.LocalPlayer
-           if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-               descendant.CFrame = player.Character.HumanoidRootPart.CFrame
 
-               Rayfield:Notify({
-                  Title = "Levers Activated",
-                  Content = "Door has been opened!",
-                 Duration = 2.5,
-                 Image = "rewind",
-               })
-           end
-       end
-   end)
-   end,
-})
 
 --Legit
 
