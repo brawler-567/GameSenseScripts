@@ -33,7 +33,7 @@ local Window = Rayfield:CreateWindow({
    }
 })
 local Main = Window:CreateTab("Main", "rewind")
-local Tab2 = Window:CreateTab("legit", "rewind")
+local Legit = Window:CreateTab("legit", "rewind")
 
 local Section = Tab:CreateSection("Section Example")
 local Label = Tab:CreateLabel("entities", "rewind")
