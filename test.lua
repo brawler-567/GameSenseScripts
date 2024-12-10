@@ -123,7 +123,7 @@ local BoostFPS = AddonsTab:CreateSlider({
    end,
 })
 
-local BoostFPS = AddonsTab:CreateSlider({
+local ChangeWalkSpeed = AddonsTab:CreateSlider({
    Name = "CustomWalkSpees",
    Range = {0, 10},
    Increment = 1,
