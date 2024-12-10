@@ -49,7 +49,7 @@ local LeversMain = MainTab:CreateButton({
                Rayfield:Notify({
                   Title = "Levers Activated",
                   Content = "Door has been opened!",
-                 Duration = 2.5,
+                 Duration = 1.5,
                  Image = "rewind",
                })
                task.wait(1)
@@ -67,38 +67,32 @@ local RemoveEntitiesMain = MainTab:CreateButton({
    Name = "Remove all entities",
    Callback = function()
    local RS = game:GetService("ReplicatedStorage")
-   workspace.DescendantAdded:Connect(function(descendant)
-      if descendant.Name == "eye" or descendant.Name == "elkman" or descendant.Name == "Rush" or descendant.Name == "Worm" or descendant.Name == "eyePrime" then
-         descendant:Destroy()
-         RS.eyegui:Destroy()
-         RS.smilegui:Destroy()
-         RS.SendRush:Destroy()
-         RS.SendWorm:Destroy()
-         RS.SendSorrow:Destroy()
-         RS.SendGoatman:Destroy()
-         task.wait(0.1)
-         RS.Worm:Destroy()
-         RS.elkman:Destroy()
-         task.wait(0.1)
-         RS.QuickNotes.Eye:Destroy()
-         RS.QuickNotes.Rush:Destroy()
-         RS.QuickNotes.Sorrow:Destroy()
-         RS.QuickNotes.elkman:Destroy()
-         RS.QuickNotes.EyePrime:Destroy()
-         RS.QuickNotes.SlugFish:Destroy()
-         RS.QuickNotes.FakeDoor:Destroy()
-         RS.QuickNotes.SleepyHead:Destroy()
-         while true do
-            local players = game:GetService("Players")
-            local plr = players.LocalPlayer
-            local SmileGui = plr:FindFirstChild("PlayerGui"):FindFirstChild("smilegui")
-            if SmileGui then
-               SmileGui:Destroy() 
-            end
-            task.wait(0.1)
-         end
+   descendant:Destroy()
+   RS.eyegui:Destroy()
+   RS.smilegui:Destroy()
+   RS.SendRush:Destroy()
+   RS.SendWorm:Destroy()
+   RS.SendSorrow:Destroy()
+   RS.SendGoatman:Destroy()
+   RS.Worm:Destroy()
+   RS.elkman:Destroy()
+   RS.QuickNotes.Eye:Destroy()
+   RS.QuickNotes.Rush:Destroy()
+   RS.QuickNotes.Sorrow:Destroy()
+   RS.QuickNotes.elkman:Destroy()
+   RS.QuickNotes.EyePrime:Destroy()
+   RS.QuickNotes.SlugFish:Destroy()
+   RS.QuickNotes.FakeDoor:Destroy()
+   RS.QuickNotes.SleepyHead:Destroy()
+   while true do
+      local players = game:GetService("Players")
+      local plr = players.LocalPlayer
+      local SmileGui = plr:FindFirstChild("PlayerGui"):FindFirstChild("smilegui")
+      if SmileGui then
+         SmileGui:Destroy() 
       end
-   end)
+      task.wait(0.1)
+   end
    end,
 })
 
@@ -107,7 +101,25 @@ local RemoveEntitiesMain = MainTab:CreateButton({
 --Legit
 
 
-
+local LeaverEspSec = LegitTab:CreateSection("LeverEsp")
+local Toggle = LegitTab:CreateToggle({
+   Name = "eye",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(eye)
+   if eye = true then
+      workspace.DescendantAdded:Connect(function(descendant)
+         if descendant.Name == "eye" then
+            game.StarterGui:SetCore("SendNotification", {
+            Title = "eye",
+            Text = "eye has been spawned",
+            Duration = 3
+         })
+         end
+      end)
+   end
+   end,
+})
 
 
 --Addons
@@ -119,10 +131,10 @@ local BoostFPS = AddonsTab:CreateSlider({
    Suffix = "affects special effects",
    CurrentValue = 6,
    Flag = "BoostFPS",
-   Callback = function(Value)
+   Callback = function(R)
    workspace.DescendantAdded:Connect(function(descendant)
       if descendant:IsA("ParticleEmitter") then
-         descendant.Rate = descendant.Rate * Value
+         descendant.Rate = descendant.Rate * R
       end
    end)
    end,
