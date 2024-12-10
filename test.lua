@@ -33,11 +33,11 @@ local Window = Rayfield:CreateWindow({
    }
 })
 --Tabs
-local Main = Window:CreateTab("Main", "rewind")
-local Legit = Window:CreateTab("legit", "rewind")
-local Addons = Window:CreateTab("Addons", "rewind")
+local MainTab = Window:CreateTab("Main", "rewind")
+local LegitTab = Window:CreateTab("legit", "rewind")
+local AddonsTab = Window:CreateTab("Addons", "rewind")
 --MainTab
-local LeversMain = MainTab:CreateSection("Levers")
+local LeversMainSec = MainTab:CreateSection("Levers")
 local LeversMain = MainTab:CreateButton({
    Name = "Button Example",
    Callback = function()
@@ -62,7 +62,7 @@ local LeversMain = MainTab:CreateButton({
    end,
 })
 
-local RemoveEntities = MainTab:CreateSection("Remove Entities")
+local RemoveEntitiesSec = MainTab:CreateSection("Remove Entities")
 local RemoveEntities = MainTab:CreateButton({
    Name = "Remove all entities",
    Callback = function()
