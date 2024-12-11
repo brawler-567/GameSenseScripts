@@ -41,33 +41,7 @@ local RemoveEntitiesSec = MainTab:CreateSection("Remove Entities")
 local RemoveEntitiesMain = MainTab:CreateButton({
    Name = "Remove all entities",
    Callback = function()
-   local RS = game:GetService("ReplicatedStorage")
-   descendant:Destroy()
-   RS.eyegui:Destroy()
-   RS.smilegui:Destroy()
-   RS.SendRush:Destroy()
-   RS.SendWorm:Destroy()
-   RS.SendSorrow:Destroy()
-   RS.SendGoatman:Destroy()
-   RS.Worm:Destroy()
-   RS.elkman:Destroy()
-   RS.QuickNotes.Eye:Destroy()
-   RS.QuickNotes.Rush:Destroy()
-   RS.QuickNotes.Sorrow:Destroy()
-   RS.QuickNotes.elkman:Destroy()
-   RS.QuickNotes.EyePrime:Destroy()
-   RS.QuickNotes.SlugFish:Destroy()
-   RS.QuickNotes.FakeDoor:Destroy()
-   RS.QuickNotes.SleepyHead:Destroy()
-   while true do
-      local players = game:GetService("Players")
-      local plr = players.LocalPlayer
-      local SmileGui = plr:FindFirstChild("PlayerGui"):FindFirstChild("smilegui")
-      if SmileGui then
-         SmileGui:Destroy() 
-      end
-      task.wait(0.1)
-   end
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/IPostStuff/Updated-Grace-Godmode/refs/heads/main/Removed%20Dozer"))()
    end,
 })
 
