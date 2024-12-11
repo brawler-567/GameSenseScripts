@@ -155,3 +155,88 @@ local ChangeWalkSpeed = AddonsTab:CreateSlider({
    end
    end,
 })
+
+
+
+--[[
+ScriptsTab:AddButton({
+    Name = "Reset Walk Speed",
+    Callback = function()
+        if not isInCooldown("Reset Walk Speed") then
+            applyCooldown("Reset Walk Speed")
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        end
+    end
+})
+
+
+
+MiscellaneousTab:AddButton({
+    Name = "Destroy Fullbright",
+    Callback = function()
+        if not isInCooldown("Destroy Fullbright") then
+            applyCooldown("Destroy Fullbright")
+            game.Lighting.Brightness = 1
+            game.Lighting.ClockTime = 0
+            game.Lighting.FogEnd = 500
+            game.Lighting.Ambient = Color3.fromRGB(0, 0, 0)
+            local character = game.Players.LocalPlayer.Character
+            if character and character:FindFirstChild("HumanoidRootPart") then
+                local light = character.HumanoidRootPart:FindFirstChild("CustomLight")
+                if light then
+                    light:Destroy()
+                end
+            end
+        end
+    end
+})
+
+MiscellaneousTab:AddButton({
+    Name = "Fullbright",
+    Callback = function()
+        if not isInCooldown("Fullbright") then
+            applyCooldown("Fullbright")
+            game.Lighting.Brightness = 2
+            game.Lighting.ClockTime = 14
+            game.Lighting.FogEnd = 100000
+            game.Lighting.Ambient = Color3.fromRGB(178, 178, 178)
+            local character = game.Players.LocalPlayer.Character
+            if character and character:FindFirstChild("HumanoidRootPart") then
+                local light = Instance.new("PointLight")
+                light.Name = "CustomLight"
+                light.Brightness = 5
+                light.Range = 20
+                light.Color = Color3.fromRGB(255, 255, 200)
+                light.Parent = character.HumanoidRootPart
+            end
+        end
+    end
+})
+
+MiscellaneousTab:AddButton({
+    Name = "Stop Infinite Jump",
+    Callback = function()
+        if not isInCooldown("Stop Infinite Jump") then
+            applyCooldown("Stop Infinite Jump")
+            _G.InfiniteJumpEnabled = false
+        end
+    end
+})
+
+MiscellaneousTab:AddButton({
+    Name = "Infinite Jump",
+    Callback = function()
+        if not isInCooldown("Infinite Jump") then
+            applyCooldown("Infinite Jump")
+            _G.InfiniteJumpEnabled = true
+            game:GetService("UserInputService").JumpRequest:Connect(function()
+                if _G.InfiniteJumpEnabled then
+                    game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+                end
+            end)
+        end
+    end
+})
+
+
+]]
