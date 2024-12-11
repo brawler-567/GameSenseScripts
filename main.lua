@@ -15,12 +15,13 @@ workspace.DescendantAdded:Connect(function(descendant)
         local player = game.Players.LocalPlayer
         if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
             descendant.CFrame = player.Character.HumanoidRootPart.CFrame
-
             game.StarterGui:SetCore("SendNotification", {
                 Title = "levers moved",
                 Text = "door has been opened",
                 Duration = 3
             })
+            task.wait(1)
+            descendant.CFrame = player.Character.HumanoidRootPart.CFrame
             task.wait(1)
             descendant.CFrame = player.Character.HumanoidRootPart.CFrame
         end
