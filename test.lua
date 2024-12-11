@@ -37,31 +37,6 @@ local MainTab = Window:CreateTab("Main", "rewind")
 local LegitTab = Window:CreateTab("legit", "rewind")
 local AddonsTab = Window:CreateTab("Addons", "rewind")
 --MainTab
-local LeversMainSec = MainTab:CreateSection("Levers")
-local LeversMain = MainTab:CreateButton({
-   Name = "AutoLevers",
-   Callback = function()
-   workspace.DescendantAdded:Connect(function(descendant)
-       if descendant.Name == "base" and descendant:IsA("BasePart") then
-           local player = game.Players.LocalPlayer
-           if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-               descendant.CFrame = player.Character.HumanoidRootPart.CFrame
-               Rayfield:Notify({
-                  Title = "Levers Activated",
-                  Content = "Door has been opened!",
-                 Duration = 1.5,
-                 Image = "rewind",
-               })
-               task.wait(1)
-               descendant.CFrame = player.Character.HumanoidRootPart.CFrame
-               task.wait(1)
-               descendant.CFrame = player.Character.HumanoidRootPart.CFrame
-           end
-       end
-   end)
-   end,
-})
-
 local RemoveEntitiesSec = MainTab:CreateSection("Remove Entities")
 local RemoveEntitiesMain = MainTab:CreateButton({
    Name = "Remove all entities",
