@@ -87,8 +87,7 @@ local ChangeWalkSpeed = AddonsTab:CreateSlider({
 
 local ResetWS = AddonsTab:CreateButton({
    Name = "WalkSpeed by Default",
-   Callback = function()
-   ChangeWalkSpeed:Set(16)
+   Callback = function(s)
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
    end,
 })
