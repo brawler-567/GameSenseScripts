@@ -114,7 +114,7 @@ local ResetWS = Tab:CreateButton({
 
 local InfinityJumpSec = AddonsTab:CreateSection("Infinity Jump")
 local InfinityJumpOn = Tab:CreateButton({
-   Name = "Infinity Jump On",
+   Name = "Infinity Jump",
    Callback = function()
    _G.InfiniteJumpEnabled = true
    game:GetService("UserInputService").JumpRequest:Connect(function()
@@ -132,44 +132,40 @@ local InfinityJumpOff = Tab:CreateButton({
    end,
 })
 
-MiscellaneousTab:AddButton({
-    Name = "Destroy Fullbright",
-    Callback = function()
-        if not isInCooldown("Destroy Fullbright") then
-            applyCooldown("Destroy Fullbright")
-            game.Lighting.Brightness = 1
-            game.Lighting.ClockTime = 0
-            game.Lighting.FogEnd = 500
-            game.Lighting.Ambient = Color3.fromRGB(0, 0, 0)
-            local character = game.Players.LocalPlayer.Character
-            if character and character:FindFirstChild("HumanoidRootPart") then
-                local light = character.HumanoidRootPart:FindFirstChild("CustomLight")
-                if light then
-                    light:Destroy()
-                end
-            end
-        end
-    end
+local FullbrightSec = AddonsTab:CreateSection("Fullbright")
+
+local FullbrightOn = Tab:CreateButton({
+   Name = "Fullbtight",
+   Callback = function()
+   game.Lighting.Brightness = 2
+   game.Lighting.ClockTime = 14
+   game.Lighting.FogEnd = 100000
+   game.Lighting.Ambient = Color3.fromRGB(178, 178, 178)
+   local character = game.Players.LocalPlayer.Character
+   if character and character:FindFirstChild("HumanoidRootPart") then
+      local light = Instance.new("PointLight")
+      light.Name = "CustomLight"
+      light.Brightness = 5
+      light.Range = 20
+      light.Color = Color3.fromRGB(255, 255, 200)
+      light.Parent = character.HumanoidRootPart
+   end
+   end,
 })
 
-MiscellaneousTab:AddButton({
-    Name = "Fullbright",
-    Callback = function()
-        if not isInCooldown("Fullbright") then
-            applyCooldown("Fullbright")
-            game.Lighting.Brightness = 2
-            game.Lighting.ClockTime = 14
-            game.Lighting.FogEnd = 100000
-            game.Lighting.Ambient = Color3.fromRGB(178, 178, 178)
-            local character = game.Players.LocalPlayer.Character
-            if character and character:FindFirstChild("HumanoidRootPart") then
-                local light = Instance.new("PointLight")
-                light.Name = "CustomLight"
-                light.Brightness = 5
-                light.Range = 20
-                light.Color = Color3.fromRGB(255, 255, 200)
-                light.Parent = character.HumanoidRootPart
-            end
-        end
-    end
+local FullbrightOff = Tab:CreateButton({
+   Name = "Fullbright Off",
+   Callback = function()
+   game.Lighting.Brightness = 1
+   game.Lighting.ClockTime = 0
+   game.Lighting.FogEnd = 500
+   game.Lighting.Ambient = Color3.fromRGB(0, 0, 0)
+   local character = game.Players.LocalPlayer.Character
+   if character and character:FindFirstChild("HumanoidRootPart") then
+      local light = character.HumanoidRootPart:FindFirstChild("CustomLight")
+      if light then
+         light:Destroy()
+      end
+   end
+   end,
 })
