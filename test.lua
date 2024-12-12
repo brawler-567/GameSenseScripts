@@ -112,9 +112,25 @@ local ResetWS = Tab:CreateButton({
    end,
 })
 
-local Infinity Jump = AddonsTab:CreateSection("Infinity Jump")
+local InfinityJumpSec = AddonsTab:CreateSection("Infinity Jump")
+local Infinity Jump = Tab:CreateButton({
+   Name = "Infinity Jump On",
+   Callback = function()
+   _G.InfiniteJumpEnabled = true
+   game:GetService("UserInputService").JumpRequest:Connect(function()
+      if _G.InfiniteJumpEnabled then
+         game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+      end
+   end)
+   end,
+})
 
-
+local Button = Tab:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   _G.InfiniteJumpEnabled = false
+   end,
+})
 
 MiscellaneousTab:AddButton({
     Name = "Destroy Fullbright",
@@ -163,25 +179,7 @@ MiscellaneousTab:AddButton({
     Callback = function()
         if not isInCooldown("Stop Infinite Jump") then
             applyCooldown("Stop Infinite Jump")
-            _G.InfiniteJumpEnabled = false
+            
         end
     end
 })
-
-MiscellaneousTab:AddButton({
-    Name = "Infinite Jump",
-    Callback = function()
-        if not isInCooldown("Infinite Jump") then
-            applyCooldown("Infinite Jump")
-            _G.InfiniteJumpEnabled = true
-            game:GetService("UserInputService").JumpRequest:Connect(function()
-                if _G.InfiniteJumpEnabled then
-                    game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
-                end
-            end)
-        end
-    end
-})
-
-
-]]
