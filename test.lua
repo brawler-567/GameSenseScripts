@@ -51,24 +51,6 @@ local RemoveEntitiesMain = MainTab:CreateButton({
 
 
 local LeaverEspSec = LegitTab:CreateSection("LeverEsp")
-local LeverEsp = LegitTab:CreateToggle({
-   Name = "Toggle Example",
-   CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-   if Value then
-      while Value do
-         workspace.DescendantAdded:Connect(function(descendant)
-            if descendant.Name == "base" and descendant:IsA("BasePart") then
-               local player = game.Players.LocalPlayer
-               if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-                  print("HeHe")
-               end
-            end
-         end)
-      end
-   end,
-})
 
 
 --Addons
