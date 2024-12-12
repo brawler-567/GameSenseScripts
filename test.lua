@@ -105,14 +105,14 @@ local ChangeWalkSpeed = AddonsTab:CreateSlider({
    end,
 })
 
-local Button = Tab:CreateButton({
-   Name = "Button Example",
+local ResetWS = Tab:CreateButton({
+   Name = "WalkSpeed by Default",
    Callback = function()
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
    end,
 })
 
-
+local Infinity Jump = AddonsTab:CreateSection("Infinity Jump")
 
 
 
