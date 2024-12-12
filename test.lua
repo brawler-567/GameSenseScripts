@@ -85,7 +85,7 @@ local ChangeWalkSpeed = AddonsTab:CreateSlider({
    end,
 })
 
-local ResetWS = Tab:CreateButton({
+local ResetWS = AddonsTab:CreateButton({
    Name = "WalkSpeed by Default",
    Callback = function()
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
@@ -93,7 +93,7 @@ local ResetWS = Tab:CreateButton({
 })
 
 local InfinityJumpSec = AddonsTab:CreateSection("Infinity Jump")
-local InfinityJumpOn = Tab:CreateButton({
+local InfinityJumpOn = AddonsTab:CreateButton({
    Name = "Infinity Jump",
    Callback = function()
    _G.InfiniteJumpEnabled = true
@@ -105,7 +105,7 @@ local InfinityJumpOn = Tab:CreateButton({
    end,
 })
 
-local InfinityJumpOff = Tab:CreateButton({
+local InfinityJumpOff = AddonsTab:CreateButton({
    Name = "Infinity Jump Off",
    Callback = function()
    _G.InfiniteJumpEnabled = false
@@ -114,7 +114,7 @@ local InfinityJumpOff = Tab:CreateButton({
 
 local FullbrightSec = AddonsTab:CreateSection("Fullbright")
 
-local FullbrightOn = Tab:CreateButton({
+local FullbrightOn = AddonsTab:CreateButton({
    Name = "Fullbtight",
    Callback = function()
    game.Lighting.Brightness = 2
@@ -133,7 +133,7 @@ local FullbrightOn = Tab:CreateButton({
    end,
 })
 
-local FullbrightOff = Tab:CreateButton({
+local FullbrightOff = AddonsTab:CreateButton({
    Name = "Fullbright Off",
    Callback = function()
    game.Lighting.Brightness = 1
