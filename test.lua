@@ -92,10 +92,10 @@ local BoostFPS = AddonsTab:CreateSlider({
 })
 
 local ChangeWalkSpeed = AddonsTab:CreateSlider({
-   Name = "CustomWalkSpees",
+   Name = "CustomWalkSpeed",
    Range = {0, 100},
    Increment = 1,
-   Suffix = "Change your WalkSpees",
+   Suffix = "Change your WalkSpeed",
    CurrentValue = 50,
    Flag = "WalkSpeedChange",
    Callback = function(s)
@@ -107,16 +107,7 @@ local ChangeWalkSpeed = AddonsTab:CreateSlider({
 
 
 
---[[
-ScriptsTab:AddButton({
-    Name = "Reset Walk Speed",
-    Callback = function()
-        if not isInCooldown("Reset Walk Speed") then
-            applyCooldown("Reset Walk Speed")
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-        end
-    end
-})
+
 
 
 
