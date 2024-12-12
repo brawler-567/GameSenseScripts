@@ -113,7 +113,7 @@ local ResetWS = Tab:CreateButton({
 })
 
 local InfinityJumpSec = AddonsTab:CreateSection("Infinity Jump")
-local Infinity Jump = Tab:CreateButton({
+local InfinityJumpOn = Tab:CreateButton({
    Name = "Infinity Jump On",
    Callback = function()
    _G.InfiniteJumpEnabled = true
@@ -125,8 +125,8 @@ local Infinity Jump = Tab:CreateButton({
    end,
 })
 
-local Button = Tab:CreateButton({
-   Name = "Button Example",
+local InfinityJumpOff = Tab:CreateButton({
+   Name = "Infinity Jump Off",
    Callback = function()
    _G.InfiniteJumpEnabled = false
    end,
@@ -170,16 +170,6 @@ MiscellaneousTab:AddButton({
                 light.Color = Color3.fromRGB(255, 255, 200)
                 light.Parent = character.HumanoidRootPart
             end
-        end
-    end
-})
-
-MiscellaneousTab:AddButton({
-    Name = "Stop Infinite Jump",
-    Callback = function()
-        if not isInCooldown("Stop Infinite Jump") then
-            applyCooldown("Stop Infinite Jump")
-            
         end
     end
 })
