@@ -39,7 +39,7 @@ local AddonsTab = Window:CreateTab("Addons", "rewind")
 --MainTab
 local RemoveLeversSec = MainTab:CreateSection("Remove Levers")
 local RemoveLeversMain = MainTab:CreateButton({
-   Name = "Remove Levers"
+   Name = "Remove Levers",
    Callback = function()
    workspace.DescendantAdded:Connect(function(descendant)
       if descendant.Name == "base" and descendant:IsA("BasePart") then
