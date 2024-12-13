@@ -58,6 +58,11 @@ local RemoveEntitiesSec = MainTab:CreateSection("Remove Entities")
 local RemoveEntitiesMain = MainTab:CreateButton({
    Name = "Remove all entities",
    Callback = function()
+   workspace.DescendantAdded:Connect(function(descendant)
+      if descendant.Name == "eye" or descendant.Name == "elkman" or descendant.Name == "Rush" or descendant.Name == "Worm" or descendant.Name == "eyePrime" then
+         descendant:Destroy()
+      end
+   end)
    local RS = game:GetService("ReplicatedStorage")
    RS.eyegui:Destroy()
    RS.smilegui:Destroy()
