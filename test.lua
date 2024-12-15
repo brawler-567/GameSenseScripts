@@ -2,9 +2,9 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local playerGui = player.PlayerGui
 
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = PlayerGui
-ScreenGui.Name = tpSG
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = PlayerGui
+screenGui.Name = tpSG
 
 local button = Instance.new("TextButton")
 button.Name = button
