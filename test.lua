@@ -62,28 +62,19 @@ teleportButton.TextSize = 25
 teleportButton.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
 teleportButton.TextStrokeTransparency = 0
 
--- Создаем переменные для сохранения координат
 local savedCFrame = nil
 
--- Функция для сохранения координат игрока
 local function saveCFrame()
-    -- Получаем текущие координаты игрока
     local currentCFrame = player.Character.HumanoidRootPart.CFrame
-    
-    -- Сохраняем координаты
     savedCFrame = currentCFrame
 end
 
--- Функция для телепорта игрока на сохраненные координаты
 local function teleportPlayer()
-    -- Проверяем, есть ли сохраненные координаты
     if savedCFrame then
-        -- Телепортируем игрока на сохраненные координаты
         player.Character.HumanoidRootPart.CFrame = savedCFrame
     end
 end
 
--- Подключаемся к событию клика по кнопкам
 saveButton.MouseButton1Click:Connect(saveCFrame)
 teleportButton.MouseButton1Click:Connect(teleportPlayer)
 
