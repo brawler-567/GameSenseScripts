@@ -1,39 +1,89 @@
+local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
+local SG = Instance.new("ScreenGui")
+local BG = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local saveButton = Instance.new("TextButton")
+local teleportButton = Instance.new("TextButton")
 local player = Players.LocalPlayer
-local playerGui = player.PlayerGui
 
-local screenGui = Instance.new("ScreenGui")
-screenGui.Parent = PlayerGui
-screenGui.Name = tpSG
+SG.Name = "SG"
+SG.Parent = game.CoreGui
 
-local button = Instance.new("TextButton")
-button.Name = button
-button.Parent = tpSG
-button.BackgroundColor3 = Color3.new(0.266667, 0.00392157, 0.627451)
-button.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
-button.BorderSizePixel = 2
-button.Position = UDim2.new(0.152380958, 0, 0.374192119, 0)
-button.Size = UDim2.new(0, 146, 0, 36)
-button.Font = Enum.Font.Highway
-button.FontSize = Enum.FontSize.Size28
-button.Text = "Toggle"
-button.TextColor3 = Color3.new(1, 1, 1)
-button.TextSize = 25
-button.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+BG.Name = "BG"
+BG.Parent = SG
+BG.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+BG.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+BG.BorderSizePixel = 2
+BG.Position = UDim2.new(0.149479166, 0, 0.82087779, 0)
+BG.Size = UDim2.new(0, 210, 0, 127)
+BG.Active = true
+BG.Draggable = true
 
-local camera = game.Workspace.CurrentCamera
+Title.Name = "Title"
+Title.Parent = BG
+Title.BackgroundColor3 = Color3.new(0.266667, 0.00392157, 0.627451)
+Title.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
+Title.BorderSizePixel = 2
+Title.Size = UDim2.new(0, 210, 0, 33)
+Title.Font = Enum.Font.Highway
+Title.Text = "By Z1dex"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.FontSize = Enum.FontSize.Size32
+Title.TextSize = 30
+Title.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+Title.TextStrokeTransparency = 0
 
-button.MouseButton1Click:Connect(function()
-    -- Получаем позицию игрока и направление взгляда
-    local character = player.Character or player.CharacterAdded:Wait()
-    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+saveButton.Parent = BG
+saveButton.BackgroundColor3 = Color3.new(0.266667, 0.00392157, 0.627451)
+saveButton.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
+saveButton.BorderSizePixel = 2
+saveButton.Position = UDim2.new(0.152380958, 0, 0.374192119, 0)
+saveButton.Size = UDim2.new(0, 146, 0, 36)
+saveButton.Font = Enum.Font.Highway
+saveButton.FontSize = Enum.FontSize.Size28
+saveButton.Text = "save"
+saveButton.TextColor3 = Color3.new(1, 1, 1)
+saveButton.TextSize = 25
+saveButton.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+saveButton.TextStrokeTransparency = 0
 
-    if humanoidRootPart then
-        local direction = camera.CFrame.LookVector  -- Направление взгляда камеры
-        local teleportDistance = 10
-        local newPosition = humanoidRootPart.Position + (direction * teleportDistance)
+teleportButton.Parent = BG
+teleportButton.BackgroundColor3 = Color3.new(0.266667, 0.00392157, 0.627451)
+teleportButton.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
+teleportButton.BorderSizePixel = 2
+teleportButton.Position = UDim2.new(0.152380958, 0, 0.174192119, 0)
+teleportButton.Size = UDim2.new(0, 146, 0, 36)
+teleportButton.Font = Enum.Font.Highway
+teleportButton.FontSize = Enum.FontSize.Size28
+teleportButton.Text = "tp"
+teleportButton.TextColor3 = Color3.new(1, 1, 1)
+teleportButton.TextSize = 25
+teleportButton.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+teleportButton.TextStrokeTransparency = 0
 
-        -- Устанавливаем новую позицию игрока
-        humanoidRootPart.CFrame = CFrame.new(newPosition, newPosition + direction)
+-- Создаем переменные для сохранения координат
+local savedCFrame = nil
+
+-- Функция для сохранения координат игрока
+local function saveCFrame()
+    -- Получаем текущие координаты игрока
+    local currentCFrame = player.Character.HumanoidRootPart.CFrame
+    
+    -- Сохраняем координаты
+    savedCFrame = currentCFrame
+end
+
+-- Функция для телепорта игрока на сохраненные координаты
+local function teleportPlayer()
+    -- Проверяем, есть ли сохраненные координаты
+    if savedCFrame then
+        -- Телепортируем игрока на сохраненные координаты
+        player.Character.HumanoidRootPart.CFrame = savedCFrame
     end
-end)
+end
+
+-- Подключаемся к событию клика по кнопкам
+saveButton.MouseButton1Click:Connect(saveCFrame)
+teleportButton.MouseButton1Click:Connect(teleportPlayer)
+
