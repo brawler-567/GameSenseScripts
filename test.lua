@@ -1,10 +1,14 @@
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
+
 local SG = Instance.new("ScreenGui")
 local BG = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 local saveButton = Instance.new("TextButton")
 local teleportButton = Instance.new("TextButton")
+
 local player = Players.LocalPlayer
 
 SG.Name = "SG"
@@ -73,6 +77,14 @@ local function teleportPlayer()
     if savedCFrame then
         player.Character.HumanoidRootPart.CFrame = savedCFrame
     end
+end
+
+if game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+    UserInputService.InputBegan:Connect(function(input)
+        if input.KeyCode == Enum.KeyCode.Z then
+            teleportPlayer()
+        end
+    end)
 end
 
 saveButton.MouseButton1Click:Connect(saveCFrame)
