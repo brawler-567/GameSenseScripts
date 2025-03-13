@@ -126,17 +126,49 @@ Icon = "rbxassetid://8569322835"
 }
         
 Tab:Button{
-	Name = "Fisch",
+	Name = "mobileDexLastV",
 	Description = nil,
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+	loadstring(game:HttpGet("https://rawscripts.net/raw/just-did-this-to-upload-the-script-dex-explorer-can-*ed-in-and-delete-stuff-29543"))()
 	end
 }
         
 Tab:Button{
-	Name = "Bss",
+	Name = "AvatarCopier",
     	Description = nil,
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/VerbalHubz/Verbal-Hub/refs/heads/main/Bee%20Swarm%20Sim.Lua",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Luarmor123/YHUB-Community/refs/heads/main/Avatar_Copier.lua"))()
+	end
+}
+
+Tab:Button{
+	Name = "fling",
+    	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EpikCatto6900/fling-fixed/refs/heads/main/main'))()
+	end
+}
+
+Tab:Button{
+	Name = "test1",
+    	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://gist.githubusercontent.com/GeniusofAB/6021a1763b5f37daf9c2f9a5a1afeea8/raw/7fce0bcecc5a33f51755a1a59ee435fca4ca5c64/gistfile1.txt"))()
+	end
+}
+
+Tab:Button{
+	Name = "test2",
+    	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/D768ibVu'))()
+	end
+}
+
+Tab:Button{
+	Name = "GazeBypass",
+    	Description = nil,
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Gazer-Ha/Reimagined/refs/heads/main/Gaze%20bypass'))()
 	end
 }
