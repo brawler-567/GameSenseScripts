@@ -24,7 +24,7 @@ local Tab = GUI:Tab{
 
 Tab:Slider{
 	Name = "WalkSpeed",
-	Default = 14,
+	Default = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed,
 	Min = 0,
 	Max = 100,
 	Callback = function(s)
@@ -35,31 +35,7 @@ end
 }
 Tab:Slider{
 	Name = "JumpPower",
-	Default = 14,
-	Min = 0,
-	Max = 100,
-	Callback = function(j)
-    while game:GetService("RunService").RenderStepped:wait() do
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
-    end
-end
-}
-
-Tab:Slider{
-	Name = "WalkSpeed",
-	Default = 14,
-	Min = 0,
-	Max = 100,
-	Callback = function(s)
-    while game:GetService("RunService").RenderStepped:wait() do
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-    end
-end
-}
-
-Tab:Slider{
-	Name = "JumpPower",
-	Default = 14,
+	Default = game.Players.LocalPlayer.Character.Humanoid.JumpPower,
 	Min = 0,
 	Max = 100,
 	Callback = function(j)
