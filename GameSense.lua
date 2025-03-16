@@ -47,24 +47,12 @@ end
 
 Tab:Slider{
 	Name = "Gravity",
-	Default = 14,
+	Default = Workspace.Gravity,
 	Min = 0,
 	Max = 200,
 	Callback = function(g)
     while game:GetService("RunService").RenderStepped:wait() do
     Workspace.Gravity = g
-    end
-end
-}
-
-Tab:Slider{
-	Name = "FOV",
-	Default = 14,
-	Min = 0,
-	Max = 100,
-	Callback = function(FOV)
-    while game:GetService("RunService").RenderStepped:wait() do
-    Workspace.Camera.FieldOfView = FOV
     end
 end
 }
