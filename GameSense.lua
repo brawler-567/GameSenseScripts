@@ -33,9 +33,6 @@ Tab:Slider{
     end
 end
 }
-
-
-
 Tab:Slider{
 	Name = "JumpPower",
 	Default = 14,
@@ -46,30 +43,6 @@ Tab:Slider{
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
     end
 end
-}
-
-local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/src.lua"))()
-local GUI = Mercury:Create{
-    Name = "Gamesense",
-    Size = UDim2.fromOffset(600, 500),
-    Theme = Mercury.Themes.Dark,
-    Link = "https://GameSense.pub/"
-}
-GUI:Notification{
-	Title = "GameSense",
-	Text = "Get Good Get GameSense",
-	Duration = 4,
-	Callback = function() end
-}
-GUI:Credit{
-	Name = "By Z1dex",
-	Description = "Get Good Get GameSense",
-	Discord = "Z1dex"
-}
-
-local Tab = GUI:Tab{
-    Name = "PlayerStats",
-    Icon = "rbxassetid://8569322835"
 }
 
 Tab:Slider{
