@@ -44,7 +44,6 @@ Tab:Slider{
     end
 end
 }
-
 Tab:Slider{
 	Name = "Gravity",
 	Default = Workspace.Gravity,
@@ -56,6 +55,38 @@ Tab:Slider{
     end
 end
 }
+Tab:Toggle{
+	Name = "Infinity Jump"",
+	StartingState = false,
+	Description = nil,
+	Callback = function(state)
+	if state == true then
+           _G.InfiniteJumpEnabled = true
+           game:GetService("UserInputService").JumpRequest:Connect(function()
+              if _G.InfiniteJumpEnabled then
+                 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+              end
+           end)
+        end
+        if state == false then
+           _G.InfiniteJumpEnabled = false
+        end
+end
+}
+
+   if state == true then
+      _G.InfiniteJumpEnabled = true
+      game:GetService("UserInputService").JumpRequest:Connect(function()
+         if _G.InfiniteJumpEnabled then
+            game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+         end
+      end)
+   end
+   if state == false then
+      _G.InfiniteJumpEnabled = false
+   end
+   end,
+})
 
 local Tab = GUI:Tab{
 Name = "GameHub",
