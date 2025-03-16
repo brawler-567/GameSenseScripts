@@ -18,7 +18,7 @@ GUI:Credit{
 }
 
 local Tab = GUI:Tab{
-    Name = "PlayerStats",
+    Name = "PlayerStatsUniversal",
     Icon = "rbxassetid://8569322835"
 }
 
