@@ -18,6 +18,9 @@ GUI:Credit{
 	Discord = "Z1dex"
 }
 --PlrStats
+
+
+
 local Tab = GUI:Tab{
     Name = "UniversalPlayerStats",
     Icon = "rbxassetid://8569322835"
@@ -75,6 +78,9 @@ Tab:Toggle{
 end
 }
 --ScriptHub
+
+
+
 local Tab = GUI:Tab{
 Name = "GameHub",
 Icon = "rbxassetid://8569322835"
