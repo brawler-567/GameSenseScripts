@@ -78,7 +78,7 @@ Tab:Toggle{
 end
 }
 Tab:Toggle{
-      Name = "Infinity Jump",
+      Name = "FullBright",
       StartingState = false,
       Description = nil,
       Callback = function(state)
