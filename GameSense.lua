@@ -128,7 +128,14 @@ Tab:Button{
 	loadstring(game:HttpGet("https://pastefy.app/rmpKKaRe/raw", true))()
 	end
 }
-
+Tab:Button{
+	Name = "Super Esp",
+	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Exunys-ESP/main/src/ESP.lua"))()("T.me/AvtorScripts")
+	ExunysDeveloperESP()
+	end
+}
 Tab:Button{
 	Name = "TpSave",
 	Description = nil,
