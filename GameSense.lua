@@ -97,7 +97,7 @@ Tab:Toggle{
             light.Parent = character.HumanoidRootPart
          end
       end
-      if Value == false then
+      if state == false then
          game.Lighting.Brightness = 1
          game.Lighting.ClockTime = 0
          game.Lighting.FogEnd = 500
