@@ -77,6 +77,41 @@ Tab:Toggle{
     end
 end
 }
+Tab:Toggle{
+   Name = "Infinity Jump",
+   StartingState = false,
+   Description = nil,
+   Callback = function(state)
+   if state == true then
+      game.Lighting.Brightness = 2
+      game.Lighting.ClockTime = 14
+      game.Lighting.FogEnd = 100000
+      game.Lighting.Ambient = Color3.fromRGB(178, 178, 178)
+      local character = game.Players.LocalPlayer.Character
+      if character and character:FindFirstChild("HumanoidRootPart") then
+         local light = Instance.new("PointLight")
+         light.Name = "CustomLight"
+         light.Brightness = 5
+         light.Range = 20
+         light.Color = Color3.fromRGB(255, 255, 200)
+         light.Parent = character.HumanoidRootPart
+      end
+   end
+   if Value == false then
+      game.Lighting.Brightness = 1
+      game.Lighting.ClockTime = 0
+      game.Lighting.FogEnd = 500
+      game.Lighting.Ambient = Color3.fromRGB(0, 0, 0)
+      local character = game.Players.LocalPlayer.Character
+      if character and character:FindFirstChild("HumanoidRootPart") then
+         local light = character.HumanoidRootPart:FindFirstChild("CustomLight")
+         if light then
+            light:Destroy()
+         end
+      end
+   end
+end
+}
 --ScriptHub
 
 
