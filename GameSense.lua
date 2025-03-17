@@ -93,6 +93,14 @@ Tab:Button{
 	loadstring(game:HttpGet("https://pastefy.app/rmpKKaRe/raw", true))()
 	end
 }
+
+Tab:Button{
+	Name = "TpSave",
+	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/test.lua"))()
+	end
+}
 Tab:Button{
 	Name = "DexLastVersionPC&MOBILE",
 	Description = nil,
