@@ -132,7 +132,7 @@ Tab:Button{
 	Name = "Super Esp",
 	Description = nil,
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Exunys-ESP/main/src/ESP.lua"))()("T.me/AvtorScripts")
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Exunys-ESP/main/src/ESP.lua"))()
 	ExunysDeveloperESP()
 	end
 }
