@@ -112,6 +112,51 @@ Tab:Toggle{
       end
 end
 }
+Tab:KeyBind{
+    Name = "Invisibility Toggle",
+    Default = Enum.KeyCode.X,
+    Callback = function(key)
+        local character = game.Players.LocalPlayer.Character
+        if not character or not character:FindFirstChild("HumanoidRootPart") then return end
+
+        if invis_on then -- Выключаем невидимость
+            workspace:FindFirstChild('invischair'):Destroy()
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Invis OFF",
+                Duration = 1,
+                Text = ""
+            })
+            invis_on = false
+        else -- Включаем невидимость
+            local savedpos = character.HumanoidRootPart.CFrame
+            character:MoveTo(Vector3.new(-25.95, 84, 3537.55))
+            
+            task.wait(0.15)
+            
+            local Seat = Instance.new('Seat')
+            Seat.Anchored = false
+            Seat.CanCollide = false
+            Seat.Name = 'invischair'
+            Seat.Transparency = 1
+            Seat.Position = Vector3.new(-25.95, 84, 3537.55)
+            Seat.Parent = workspace
+            
+            local Weld = Instance.new("Weld")
+            Weld.Part0 = Seat
+            Weld.Part1 = character:FindFirstChild("Torso") or character.UpperTorso
+            Weld.Parent = Seat
+            
+            Seat.CFrame = savedpos
+            
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Invis ON",
+                Duration = 1,
+                Text = ""
+            })
+            invis_on = true
+        end
+    end
+}
 --ScriptHub
 
 
