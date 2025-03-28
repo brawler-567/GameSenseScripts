@@ -113,7 +113,7 @@ Tab:Toggle{
 end
 }
 Tab:KeyBind{
-    Name = "Invisibility Toggle",
+    Name = "Invisibility",
     Default = Enum.KeyCode.X,
     Callback = function(key)
         local character = game.Players.LocalPlayer.Character
