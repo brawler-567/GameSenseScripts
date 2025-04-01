@@ -165,7 +165,6 @@ local Tab = GUI:Tab{
 Name = "GameHub",
 Icon = "rbxassetid://8569322835"
 }
-
 Tab:Button{
 	Name = "HeadScale",
 	Description = nil,
@@ -177,8 +176,8 @@ Tab:Button{
 	Name = "Super Esp",
 	Description = nil,
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Exunys-ESP/main/src/ESP.lua"))()
-	ExunysDeveloperESP()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/test.lua"))()
+	
 	end
 }
 Tab:Button{
