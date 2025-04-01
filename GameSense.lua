@@ -173,11 +173,10 @@ Tab:Button{
 	end
 }
 Tab:Button{
-	Name = "Super Esp",
+	Name = "SavePositionTp",
 	Description = nil,
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/test.lua"))()
-	
 	end
 }
 Tab:Button{
