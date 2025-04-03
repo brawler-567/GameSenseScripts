@@ -190,6 +190,6 @@ Tab:Button{
 	Name = "DexLastVersionPC&MOBILE",
 	Description = nil,
 	Callback = function()
-	loadstring(game:HttpGet("https://rawscripts.net/raw/just-did-this-to-upload-the-script-dex-explorer-can-*ed-in-and-delete-stuff-29543"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/C-Feng-dev/roblox-script/refs/heads/main/Dex%20v4.lua"))()
 	end
 }
