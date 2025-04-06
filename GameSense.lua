@@ -208,6 +208,13 @@ Tab:Button{
 	end
 }
 Tab:Button{
+	Name = "TSB auto block",
+	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/TSB/refs/heads/main/CombatGui"))()
+	end
+}
+Tab:Button{
 	Name = "DexLastVersionPC&MOBILE",
 	Description = nil,
 	Callback = function()
