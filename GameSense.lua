@@ -201,7 +201,7 @@ Tab:Button{
 	end
 }
 Tab:Button{
-	Name = "DexLastVersionPC&MOBILE",
+	Name = "platformUnderPlayer",
 	Description = nil,
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/platformunderplayer.lua"))()
