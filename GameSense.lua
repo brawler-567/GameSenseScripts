@@ -173,6 +173,13 @@ Tab:Button{
 	end
 }
 Tab:Button{
+	Name = "invisibleFlyTool",
+	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/C-Feng-dev/roblox-script/refs/heads/main/Dex%20v4.lua"))()
+	end
+}
+Tab:Button{
 	Name = "GreatestSaveTp",
 	Description = nil,
 	Callback = function()
