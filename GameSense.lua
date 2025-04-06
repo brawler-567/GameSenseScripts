@@ -187,6 +187,13 @@ Tab:Button{
 	end
 }
 Tab:Button{
+	Name = "Fe chat cleaner",
+	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Avtor1zaTion/FE-Chat-Cleaner/refs/heads/main/FE%20Chat%20Cleaner"))()
+	end
+}
+Tab:Button{
 	Name = "DexLastVersionPC&MOBILE",
 	Description = nil,
 	Callback = function()
