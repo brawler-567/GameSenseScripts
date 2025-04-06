@@ -180,10 +180,10 @@ Tab:Button{
 	end
 }
 Tab:Button{
-	Name = "TpSave",
+	Name = "GreatestSaveTp",
 	Description = nil,
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/test.lua"))()
+	loadstring(game:HttpGet("https://pastebin.com/raw/U2LP0mzJ"))()
 	end
 }
 Tab:Button{
