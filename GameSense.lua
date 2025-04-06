@@ -204,6 +204,13 @@ Tab:Button{
 	Name = "DexLastVersionPC&MOBILE",
 	Description = nil,
 	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/platformunderplayer.lua"))()
+	end
+}
+Tab:Button{
+	Name = "DexLastVersionPC&MOBILE",
+	Description = nil,
+	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/C-Feng-dev/roblox-script/refs/heads/main/Dex%20v4.lua"))()
 	end
 }
