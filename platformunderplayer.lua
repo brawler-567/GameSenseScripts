@@ -18,7 +18,6 @@ local function createPlatform()
     platform.Color = Color3.fromRGB(0, 170, 255)
     platform.Parent = workspace
     
-    -- Автоматическое удаление через 5 секунд
     --game:GetService("Debris"):AddItem(platform, 5)
 end
 
