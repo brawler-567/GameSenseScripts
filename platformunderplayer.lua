@@ -19,7 +19,7 @@ local function createPlatform()
     platform.Parent = workspace
     
     -- Автоматическое удаление через 5 секунд
-    game:GetService("Debris"):AddItem(platform, 5)
+    --game:GetService("Debris"):AddItem(platform, 5)
 end
 
 UIS.InputBegan:Connect(function(input, gameProcessed)
