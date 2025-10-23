@@ -15,7 +15,7 @@ local function createPlatform()
     platform.Anchored = true
     platform.CanCollide = true
     platform.Transparency = 0.3
-    platform.Color = Color3.fromRGB(0, 170, 255)  -- Голубой цвет
+    platform.Color = Color3.fromRGB(0, 170, 255)
     platform.Parent = workspace
     
     -- Автоматическое удаление через 5 секунд
