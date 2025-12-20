@@ -64,6 +64,12 @@ Tab:Toggle{
 	StartingState = false,
 	Description = nil,
 	Callback = function(state)
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true)
+	humanoid.UseJumpPower = true
+
 	if state == true then
         _G.InfiniteJumpEnabled = true
         game:GetService("UserInputService").JumpRequest:Connect(function()
@@ -82,6 +88,10 @@ Tab:Toggle{
       StartingState = false,
       Description = nil,
       Callback = function(state)
+	  LB = game.Lighting.Brightness
+	  LC = game.Lighting.ClockTime
+	  LF = game.Lighting.FogEnd
+	  LA = game.Lighting.Ambient
       if state == true then
          game.Lighting.Brightness = 2
          game.Lighting.ClockTime = 14
@@ -98,10 +108,10 @@ Tab:Toggle{
          end
       end
       if state == false then
-         game.Lighting.Brightness = 1
-         game.Lighting.ClockTime = 0
-         game.Lighting.FogEnd = 500
-         game.Lighting.Ambient = Color3.fromRGB(0, 0, 0)
+         game.Lighting.Brightness = LB
+         game.Lighting.ClockTime = LC
+         game.Lighting.FogEnd = LF
+         game.Lighting.Ambient = LA
          local character = game.Players.LocalPlayer.Character
          if character and character:FindFirstChild("HumanoidRootPart") then
             local light = character.HumanoidRootPart:FindFirstChild("CustomLight")
