@@ -228,7 +228,8 @@ Tab:Button{
 	Name = "DexLastVersionPC&MOBILE",
 	Description = nil,
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/brawler-567/GameSenseScripts/refs/heads/main/dex.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/nuIIism/scripts/main/dex.lua"))()
 	end
 }
+
 
