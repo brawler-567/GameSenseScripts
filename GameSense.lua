@@ -231,5 +231,12 @@ Tab:Button{
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/nuIIism/scripts/main/dex.lua"))()
 	end
 }
+Tab:Button{
+	Name = "wh",
+	Description = nil,
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/n0lex9999/TeRoWall-Universal-ESP/refs/heads/main/TeroWall.lua"))()
+	end
+}
 
 
