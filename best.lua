@@ -41,7 +41,16 @@ local menu = {
 
     rage = {
         discharge = ui.new_checkbox("LUA", "A", "Auto discharge"),
-        mode = ui.new_combobox("LUA", "A", "Mode", {"Instant", "Ideal"})
+        mode = ui.new_combobox("LUA", "A", "Mode", {"Instant", "Ideal"}),
+
+        predict = ui.new_checkbox("LUA", "A", "Predict L/R"),
+        hotexp = ui.new_checkbox("LUA", "A", "Exploit Predict"),
+        pingpos = ui.new_combobox("LUA", "A", "Ping Position", {"Low", "High"}),
+
+        slidescout = ui.new_combobox("LUA", "A", "Scout Interp Adjust", {"Disabled", "Medium", "Maximum", "Extreme"}),
+        slideawp = ui.new_combobox("LUA", "A", "AWP Interp Adjust", {"Disabled", "Medium", "Maximum", "Extreme"}),
+        slideauto = ui.new_combobox("LUA", "A", "Auto Interp Adjust", {"Disabled", "Medium", "Maximum", "Extreme"}),
+        slider8 = ui.new_combobox("LUA", "A", "Heavy Pistol Interp Adjust", {"Disabled", "Medium", "Maximum", "Extreme"})
     },
 
     aa = {
@@ -278,6 +287,63 @@ menu.home.import = ui.new_button("LUA","A","Import",function()
     notify("Imported config")
 
 end)
+
+-- predict
+
+local interp_values = {
+    ["Disabled"] = 0.015625,
+    ["Medium"]   = 0.028000,
+    ["Maximum"]  = 0.029125,
+    ["Extreme"]  = 0.031000
+}
+
+local weapon_sliders = {
+    ["CWeaponSSG08"]  = rage.slidescout,
+    ["CWeaponAWP"]    = rage.slideawp,
+    ["CWeaponSCAR20"] = rage.slideauto,
+    ["CWeaponG3SG1"]  = rage.slideauto,
+    ["CDEagle"]       = rage.slider8
+}
+
+local function run_predict()
+    if not ui.get(rage.predict) or not ui.get(rage.hotexp) then
+        cvar.cl_interp:set_float(0.015625)
+        cvar.cl_interp_ratio:set_int(2)
+        cvar.cl_interpolate:set_int(1)
+        return
+    end
+
+    local lp = entity.get_local_player()
+    if not lp or not entity.is_alive(lp) then return end
+
+    local gun = entity.get_player_weapon(lp)
+    if not gun then return end
+
+    local classname = entity.get_classname(gun)
+    local ping_mode = ui.get(rage.pingpos)
+
+    if ping_mode == "Low" then
+        cvar.cl_interpolate:set_int(0)
+        cvar.cl_interp_ratio:set_int(1)
+
+        -- Получаем нужный комбобокс из таблицы оружия
+        local slider = weapon_sliders[classname]
+        if slider then
+            local mode = ui.get(slider)
+            local interp_val = interp_values[mode]
+            if interp_val then
+                cvar.cl_interp:set_float(interp_val)
+            end
+        else
+            cvar.cl_interp:set_float(0.015625)
+        end
+
+    elseif ping_mode == "High" then
+        cvar.cl_interp:set_float(0.020000)
+        cvar.cl_interp_ratio:set_int(0)
+        cvar.cl_interpolate:set_int(0)
+    end
+end
 
 -- defensive peek
 
@@ -531,12 +597,10 @@ local utility_console = {
 }
 
 client.set_event_callback("round_prestart", function()
-    -- Проверяем, включен ли бай-бот
     if not ui.get(menu.misc.buy_bot_enabled) then
         return
     end
 
-    -- Проверяем деньги
     local money = entity.get_prop(entity.get_local_player(), "m_iAccount") or 0
     if money <= 800 then
         return
@@ -546,17 +610,14 @@ client.set_event_callback("round_prestart", function()
     local secondary = ui.get(menu.misc.buy_bot_secondary)
     local util = ui.get(menu.misc.buy_bot_utility)
 
-    -- 1. Сначала покупаем основное оружие
     if primary ~= 'None' and primary_console[primary] then
         client.exec("buy " .. primary_console[primary])
     end
 
-    -- 2. Затем покупаем пистолет
     if secondary ~= 'None' and secondary_console[secondary] then
         client.exec("buy " .. secondary_console[secondary])
     end
 
-    -- 3. В конце по очереди покупаем гранаты и броню
     for i = 1, #util do
         local item = utility_console[util[i]]
         if item then
@@ -564,7 +625,6 @@ client.set_event_callback("round_prestart", function()
         end
     end
 
-    -- Уведомление в чат/экран (если включено в меню)
     if contains(ui.get(menu.visual.notify), "Buy") and primary ~= 'None' then
         notify("Bought " .. primary)
     end
@@ -588,7 +648,8 @@ client.set_event_callback("paint_ui", function()
     -- rage
 
     visible(t=="Rage", {
-        menu.rage.discharge
+        menu.rage.discharge,
+        menu.rage.predict
     })
 
     ui.set_visible(
@@ -596,6 +657,22 @@ client.set_event_callback("paint_ui", function()
         t=="Rage"
         and ui.get(menu.rage.discharge)
     )
+
+    local is_predict_on = t == "Rage" and ui.get(menu.rage.predict)
+
+    visible(is_predict_on, {
+        menu.rage.hotexp,
+        menu.rage.pingpos
+    })
+
+    local is_low_ping = is_predict_on and ui.get(menu.rage.pingpos) == "Low"
+
+    visible(is_low_ping, {
+        menu.rage.slidescout,
+        menu.rage.slideawp,
+        menu.rage.slideauto,
+        menu.rage.slider8
+    })
 
     -- anti-aim
 
@@ -638,7 +715,6 @@ client.set_event_callback("paint_ui", function()
         menu.misc.buy_bot_utility
     })
 
-    -- buy bot visibility (only show when enabled)
     visible(
         t=="Misc" and ui.get(menu.misc.buy_bot_enabled),
         {
@@ -652,7 +728,7 @@ end)
 -- setup_command
 
 client.set_event_callback("setup_command", function(cmd)
-
+    run_predict()
     update_manuals()
 
     -- discharge
